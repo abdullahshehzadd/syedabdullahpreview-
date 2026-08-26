@@ -1,0 +1,7 @@
+{
+  "name": "Demo Restaurant Name",
+  "description": "Mobile-first luxury web app and WhatsApp ordering engine with organic food photography, geometric balance theme, and real-time motion design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
