@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronDown, Sparkles, Flame, Move } from 'lucide-react';
+import { ChevronDown, Sparkles, Flame, Move, Utensils, ArrowRight, Clock, Star } from 'lucide-react';
 
 import animatedWebpFeathered from '../assets/images/pizza_cheese_pull_feathered.webp';
 import animatedWebpUltra from '../assets/images/pizza_cheese_pull_ultra.webp';
@@ -46,11 +46,13 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onScrollToMenu
+  onScrollToMenu,
+  onOpenHoursModal,
+  onSelectFeaturedItem,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const centeredOverlayRef = useRef<HTMLDivElement>(null);
+  const pizzaContainerRef = useRef<HTMLDivElement>(null);
   const indicatorBtnRef = useRef<HTMLButtonElement>(null);
 
   const [assetsLoaded, setAssetsLoaded] = useState(false);
@@ -121,28 +123,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   useEffect(() => {
     if (!assetsLoaded) return;
 
-    // Animate settleProgressRef from 0 to 1 with smooth power3 settle
     const settleObj = { val: 0 };
     gsap.to(settleObj, {
       val: 1,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'power3.out',
       onUpdate: () => {
         settleProgressRef.current = settleObj.val;
       }
     });
 
-    // Animate centered text overlay entrance
-    if (centeredOverlayRef.current) {
+    if (containerRef.current) {
       gsap.fromTo(
-        centeredOverlayRef.current,
-        { opacity: 0, y: 30, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'power3.out', delay: 0.2 }
+        containerRef.current.querySelectorAll('.hero-fade-in'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: 'power3.out' }
       );
     }
   }, [assetsLoaded]);
 
-  // 3. High-Performance Canvas Video-Like Frame Renderer with 3D Tilt & FX
+  // 3. Canvas Frame Renderer with 3D Tilt & FX
   const renderFrame = useCallback((scrollProgress: number, timeMs: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -150,31 +150,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (!ctx) return;
 
     const frames = imagesRef.current;
-    if (!frames || frames.length === 0) {
-      if (baseBackupRef.current && baseBackupRef.current.complete) {
-        const dpr = Math.min(window.devicePixelRatio || 2, 3);
-        const displayWidth = canvas.clientWidth;
-        const displayHeight = canvas.clientHeight;
-        if (canvas.width !== displayWidth * dpr || canvas.height !== displayHeight * dpr) {
-          canvas.width = displayWidth * dpr;
-          canvas.height = displayHeight * dpr;
-        }
-        ctx.save();
-        ctx.scale(dpr, dpr);
-        ctx.clearRect(0, 0, displayWidth, displayHeight);
-        const isMobile = displayWidth < 640;
-        const maxDim = isMobile
-          ? Math.min(displayWidth * 0.90, displayHeight * 0.54, 420)
-          : Math.min(displayWidth * 0.88, displayHeight * 0.72, 620);
-        ctx.drawImage(baseBackupRef.current, (displayWidth - maxDim) / 2, (displayHeight - maxDim) / 2, maxDim, maxDim);
-        ctx.restore();
-      }
-      return;
-    }
-
     const dpr = Math.min(window.devicePixelRatio || 2, 3);
     const displayWidth = canvas.clientWidth;
     const displayHeight = canvas.clientHeight;
+
+    if (displayWidth === 0 || displayHeight === 0) return;
 
     if (canvas.width !== displayWidth * dpr || canvas.height !== displayHeight * dpr) {
       canvas.width = displayWidth * dpr;
@@ -185,55 +165,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, displayWidth, displayHeight);
 
+    if (!frames || frames.length === 0) {
+      if (baseBackupRef.current && baseBackupRef.current.complete) {
+        const maxDim = Math.min(displayWidth * 0.94, displayHeight * 0.94);
+        ctx.drawImage(baseBackupRef.current, (displayWidth - maxDim) / 2, (displayHeight - maxDim) / 2, maxDim, maxDim);
+      }
+      ctx.restore();
+      return;
+    }
+
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
 
-    // Composition Math: Centered nicely on mobile & desktop viewports
-    const isMobile = displayWidth < 640;
-    const settle = settleProgressRef.current; // 0 -> 1 entrance settle
-    const settleScale = 0.88 + 0.12 * settle;
-    
-    // Scale appropriately per viewport
-    const maxPizzaDim = (isMobile
-      ? Math.min(displayWidth * 0.92, displayHeight * 0.52, 420)
-      : Math.min(displayWidth * 0.88, displayHeight * 0.72, 620)) * settleScale;
-    
-    // Exact Geometric Center with optical balance
+    const settle = settleProgressRef.current;
+    const maxPizzaDim = Math.min(displayWidth * 0.96, displayHeight * 0.96);
     const centerX = displayWidth / 2;
-    const verticalOffset = isMobile ? (displayHeight * 0.02) : 0;
-    const centerY = (displayHeight / 2) + verticalOffset + (1 - settle) * 30;
-    
+    const centerY = displayHeight / 2;
+
     // Smooth 3D tilt lerp
     const tilt = mouseTiltRef.current;
     tilt.x += (tilt.targetX - tilt.x) * 0.1;
     tilt.y += (tilt.targetY - tilt.y) * 0.1;
 
-    // Apply 3D perspective shift on center
-    const tiltedCenterX = centerX + tilt.x * 16;
-    const tiltedCenterY = centerY + tilt.y * 12;
+    const tiltedCenterX = centerX + tilt.x * 12;
+    const tiltedCenterY = centerY + tilt.y * 10;
     const destX = tiltedCenterX - maxPizzaDim / 2;
     const destY = tiltedCenterY - maxPizzaDim / 2;
 
-    // A. Sage Green Atmospheric Hearth Ambient Underglow
+    // Sage Hearth Glow behind canvas
     const sageHearthGlow = ctx.createRadialGradient(
       tiltedCenterX,
-      tiltedCenterY + 10,
+      tiltedCenterY,
       maxPizzaDim * 0.10,
       tiltedCenterX,
-      tiltedCenterY + 10,
-      maxPizzaDim * 0.75
+      tiltedCenterY,
+      maxPizzaDim * 0.65
     );
-    sageHearthGlow.addColorStop(0, `rgba(139, 197, 61, ${0.35 * settle})`);
-    sageHearthGlow.addColorStop(0.35, `rgba(78, 135, 82, ${0.24 * settle})`);
-    sageHearthGlow.addColorStop(0.70, `rgba(1, 47, 19, ${0.16 * settle})`);
+    sageHearthGlow.addColorStop(0, `rgba(139, 197, 61, ${0.30 * settle})`);
+    sageHearthGlow.addColorStop(0.4, `rgba(78, 135, 82, ${0.18 * settle})`);
+    sageHearthGlow.addColorStop(0.75, `rgba(1, 47, 19, ${0.12 * settle})`);
     sageHearthGlow.addColorStop(1, 'rgba(1, 18, 7, 0)');
 
     ctx.fillStyle = sageHearthGlow;
     ctx.beginPath();
-    ctx.arc(tiltedCenterX, tiltedCenterY + 10, maxPizzaDim * 0.75, 0, Math.PI * 2);
+    ctx.arc(tiltedCenterX, tiltedCenterY, maxPizzaDim * 0.65, 0, Math.PI * 2);
     ctx.fill();
 
-    // B. Sub-frame Video Interpolation Calculation across frames
+    // Frame Interpolation
     const effectiveProgress = Math.max(0, Math.min(1, scrollProgress + manualPullRef.current));
     const totalFrames = frames.length;
     const floatIndex = effectiveProgress * (totalFrames - 1);
@@ -244,23 +222,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     const primaryFrame = frames[baseIndex];
     const secondaryFrame = frames[nextIndex];
 
-    // C. Render Primary Base Frame with Soft Depth Shadow & 3D Tilt Transform
     ctx.save();
     ctx.translate(tiltedCenterX, tiltedCenterY);
-    ctx.rotate((tilt.x * 0.04));
+    ctx.rotate(tilt.x * 0.035);
     ctx.translate(-tiltedCenterX, -tiltedCenterY);
 
     if (primaryFrame && primaryFrame.complete) {
       ctx.save();
       ctx.globalAlpha = Math.min(1, settle * 1.2);
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
-      ctx.shadowBlur = 40;
-      ctx.shadowOffsetY = 20;
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
+      ctx.shadowBlur = 30;
+      ctx.shadowOffsetY = 16;
       ctx.drawImage(primaryFrame, destX, destY, maxPizzaDim, maxPizzaDim);
       ctx.restore();
     }
 
-    // D. Smooth Cross-Dissolve Sub-frame for Liquid Video-Like Playback
     if (blendAlpha > 0.005 && secondaryFrame && secondaryFrame.complete && baseIndex !== nextIndex) {
       ctx.save();
       ctx.globalAlpha = blendAlpha * Math.min(1, settle * 1.2);
@@ -271,13 +247,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     // Specular Sheen on tilt
     if (Math.abs(tilt.x) > 0.05 || Math.abs(tilt.y) > 0.05) {
       const sheenGrad = ctx.createLinearGradient(
-        destX + tilt.x * 50,
+        destX + tilt.x * 40,
         destY,
         destX + maxPizzaDim,
         destY + maxPizzaDim
       );
       sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
-      sheenGrad.addColorStop(0.5, `rgba(255, 255, 255, ${0.06 * Math.abs(tilt.x + tilt.y)})`);
+      sheenGrad.addColorStop(0.5, `rgba(255, 255, 255, ${0.05 * Math.abs(tilt.x + tilt.y)})`);
       sheenGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.fillStyle = sheenGrad;
       ctx.beginPath();
@@ -287,35 +263,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
     ctx.restore(); // restore tilt rotation
 
-    // E. Dynamic FX: Culinary Herbs (Oregano/Chili) & Volumetric Steam
+    // FX: Culinary Herbs & Volumetric Steam
     const pList = particlesRef.current;
     
     // Spawn Steam
-    if (Math.random() < 0.24 && settle > 0.6) {
+    if (Math.random() < 0.22 && settle > 0.6) {
       pList.push({
-        x: tiltedCenterX + (Math.random() - 0.5) * (maxPizzaDim * 0.38),
-        y: tiltedCenterY - maxPizzaDim * 0.06 - effectiveProgress * 20,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: -0.75 - Math.random() * 0.65,
-        alpha: 0.28,
-        size: 14 + Math.random() * 18,
-        maxLife: 65 + Math.random() * 35,
+        x: tiltedCenterX + (Math.random() - 0.5) * (maxPizzaDim * 0.35),
+        y: tiltedCenterY - maxPizzaDim * 0.06 - effectiveProgress * 15,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: -0.7 - Math.random() * 0.5,
+        alpha: 0.25,
+        size: 12 + Math.random() * 16,
+        maxLife: 60 + Math.random() * 30,
         life: 0,
         type: 'steam'
       });
     }
 
     // Spawn Culinary Herb Flake / Pepper Sparkle
-    if (Math.random() < 0.08 && settle > 0.8) {
+    if (Math.random() < 0.07 && settle > 0.8) {
       const isRed = Math.random() > 0.5;
       pList.push({
-        x: tiltedCenterX + (Math.random() - 0.5) * (maxPizzaDim * 0.55),
+        x: tiltedCenterX + (Math.random() - 0.5) * (maxPizzaDim * 0.5),
         y: tiltedCenterY + (Math.random() - 0.5) * (maxPizzaDim * 0.3),
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: -0.35 - Math.random() * 0.4,
-        alpha: 0.85,
-        size: 2 + Math.random() * 2.5,
-        maxLife: 80 + Math.random() * 40,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: -0.3 - Math.random() * 0.35,
+        alpha: 0.8,
+        size: 2 + Math.random() * 2,
+        maxLife: 75 + Math.random() * 35,
         life: 0,
         type: 'herb',
         color: isRed ? '#EF4444' : '#8BC53D',
@@ -328,7 +304,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     for (let i = pList.length - 1; i >= 0; i--) {
       const p = pList[i];
       p.life++;
-      p.x += p.vx + Math.sin(timeMs * 0.003 + i) * 0.22;
+      p.x += p.vx + Math.sin(timeMs * 0.003 + i) * 0.2;
       p.y += p.vy;
       const lifeRatio = p.life / p.maxLife;
 
@@ -338,12 +314,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       }
 
       if (p.type === 'steam') {
-        p.size += 0.22;
+        p.size += 0.2;
         const currentAlpha = p.alpha * (1 - lifeRatio) * settle;
         ctx.save();
         const steamGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
-        steamGrad.addColorStop(0, `rgba(255, 255, 255, ${currentAlpha * 0.45})`);
-        steamGrad.addColorStop(0.5, `rgba(139, 197, 61, ${currentAlpha * 0.15})`);
+        steamGrad.addColorStop(0, `rgba(255, 255, 255, ${currentAlpha * 0.4})`);
+        steamGrad.addColorStop(0.5, `rgba(139, 197, 61, ${currentAlpha * 0.12})`);
         steamGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.fillStyle = steamGrad;
@@ -366,25 +342,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       }
     }
 
-    // F. Subtle Outer Crust Ambient Ring
-    ctx.save();
-    ctx.strokeStyle = `rgba(139, 197, 61, ${0.18 * settle})`;
-    ctx.lineWidth = 1.2;
-    ctx.beginPath();
-    ctx.arc(tiltedCenterX, tiltedCenterY, maxPizzaDim * 0.48, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.restore();
-
     ctx.restore();
   }, []);
 
-  // 4. Optimized 60–120FPS Render Loop with Visibility Caching
+  // 4. Render Loop with Visibility Caching
   useEffect(() => {
     if (!assetsLoaded) return;
 
     let isRunning = true;
 
-    // IntersectionObserver to sleep RAF when scrolled offscreen
     const observer = new IntersectionObserver(
       ([entry]) => {
         isVisibleRef.current = entry.isIntersecting;
@@ -400,13 +366,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       if (!isRunning) return;
 
       if (isVisibleRef.current) {
-        // Spring lerp smoothing for liquid frame updates
         const target = scrollTargetRef.current;
         const current = smoothProgressRef.current;
         const diff = target - current;
         smoothProgressRef.current = current + diff * 0.15;
 
-        // Manual stretch spring return when released
         if (!isPullingDirectly && manualPullRef.current > 0.001) {
           manualPullRef.current *= 0.90;
         }
@@ -428,7 +392,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     };
   }, [assetsLoaded, renderFrame, isPullingDirectly]);
 
-  // 5. Scroll-driven cheese pull progress via scroll listener & safe ScrollTrigger
+  // 5. Scroll-driven cheese pull progress
   useEffect(() => {
     if (!assetsLoaded || !containerRef.current) return;
 
@@ -437,26 +401,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     const handleScroll = () => {
       const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight || 1;
-      // Calculate how far through the hero section the user has scrolled
-      const progress = Math.max(0, Math.min(1, -rect.top / (windowHeight * 0.75)));
+      const progress = Math.max(0, Math.min(1, -rect.top / (windowHeight * 0.65)));
       scrollTargetRef.current = progress;
-
-      // 30% Scroll Fade: once user scrolls past 30%, smoothly fade out centered overlay
-      if (centeredOverlayRef.current) {
-        if (progress >= 0.3) {
-          const fadeRatio = Math.min(1, (progress - 0.3) / 0.18);
-          const opacity = 1 - fadeRatio;
-          centeredOverlayRef.current.style.opacity = `${opacity}`;
-          centeredOverlayRef.current.style.transform = `translateY(${-35 * fadeRatio}px) scale(${1 - 0.05 * fadeRatio})`;
-          centeredOverlayRef.current.style.pointerEvents = opacity <= 0.05 ? 'none' : 'auto';
-        } else {
-          const enterRatio = progress / 0.3;
-          const opacity = 1 - enterRatio * 0.15;
-          centeredOverlayRef.current.style.opacity = `${opacity}`;
-          centeredOverlayRef.current.style.transform = 'translateY(0) scale(1)';
-          centeredOverlayRef.current.style.pointerEvents = 'auto';
-        }
-      }
     };
 
     const handleResize = () => {
@@ -476,11 +422,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   // 6. Interactive Mouse & Touch 3D Tilt Listeners
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const nx = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+    if (!pizzaContainerRef.current) return;
+    const rect = pizzaContainerRef.current.getBoundingClientRect();
+    const nx = (e.clientX - rect.left) / rect.width - 0.5;
     const ny = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseTiltRef.current.targetX = nx * 2;
-    mouseTiltRef.current.targetY = ny * 2;
+    mouseTiltRef.current.targetX = Math.max(-1, Math.min(1, nx * 2));
+    mouseTiltRef.current.targetY = Math.max(-1, Math.min(1, ny * 2));
   };
 
   const handleMouseLeave = () => {
@@ -489,7 +436,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     setIsPullingDirectly(false);
   };
 
-  // Direct Touch Drag / Pull Interaction on Pizza
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     if (e.touches.length > 0) {
       touchStartYRef.current = e.touches[0].clientY;
@@ -501,7 +447,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (touchStartYRef.current !== null && e.touches.length > 0) {
       const deltaY = e.touches[0].clientY - touchStartYRef.current;
       if (deltaY > 0) {
-        manualPullRef.current = Math.min(1, deltaY / 180);
+        manualPullRef.current = Math.min(1, deltaY / 160);
       }
     }
   };
@@ -512,14 +458,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   const handleScrollToNext = () => {
-    if (containerRef.current) {
-      const heroBottom = containerRef.current.offsetTop + containerRef.current.offsetHeight * 1.4;
+    if (onScrollToMenu) {
+      onScrollToMenu();
+    } else if (containerRef.current) {
+      const heroBottom = containerRef.current.offsetTop + containerRef.current.offsetHeight;
       window.scrollTo({
         top: heroBottom,
         behavior: 'smooth'
       });
-    } else if (onScrollToMenu) {
-      onScrollToMenu();
     }
   };
 
@@ -527,79 +473,143 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <section
       ref={containerRef}
       id="hero-section"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      className="relative w-full h-screen bg-[#011207] text-[#E2F0CC] overflow-hidden select-none touch-pan-y"
+      className="relative w-full min-h-[90vh] lg:min-h-[94vh] bg-[#011207] text-[#E2F0CC] overflow-hidden select-none flex flex-col justify-center items-center py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8"
     >
-      {/* Sage Green Screen Backdrop & Ambient Layer */}
+      {/* Sage Green Screen Backdrop & Ambient Glow Layer */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Soft Sage Green Radial Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[620px] h-[340px] sm:h-[620px] bg-[#8BC53D]/18 rounded-full blur-[90px] sm:blur-[140px]" />
-        {/* Secondary Emerald Hearth Radiance */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[460px] h-[260px] sm:h-[460px] bg-[#4E8752]/20 rounded-full blur-[80px] sm:blur-[110px]" />
-        {/* Subtle Vignette for High Text Contrast */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(1,18,7,0.85)_85%)]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[580px] md:w-[680px] h-[320px] sm:h-[580px] md:h-[680px] bg-[#8BC53D]/16 rounded-full blur-[100px] sm:blur-[140px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[440px] h-[240px] sm:h-[440px] bg-[#4E8752]/20 rounded-full blur-[80px] sm:blur-[110px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(1,18,7,0.85)_85%)]" />
       </div>
 
-      {/* High-Definition Retina Canvas: Animated WebP Pizza & Scroll-Driven Frame Engine */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
-      />
-
-      {/* Direct Animated WebP Fallback & Preloader for Instant Rendering */}
-      <div className="sr-only" aria-hidden="true">
-        <img
-          src={animatedWebpFeathered}
-          alt="Animated woodfired pizza cheese pull"
-          loading="eager"
-        />
-      </div>
-
-      {/* Overlay Text (Centered): Heading: "demo restaurant", Subheading: "scroll to see more." with Smooth Green-Screen Contrast */}
-      <div
-        ref={centeredOverlayRef}
-        className="absolute inset-0 z-20 flex flex-col items-center justify-between pt-24 sm:pt-28 pb-10 px-4 pointer-events-auto transition-transform will-change-transform"
-      >
-        {/* Top Tag & Active Stretch Indicator */}
-        <div className="flex items-center gap-2">
+      {/* Main Content Layout Container */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
+        {/* 1. Top Badges & Live Status */}
+        <div className="hero-fade-in flex flex-wrap items-center justify-center gap-2.5 mb-4 sm:mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#011207]/80 backdrop-blur-md border border-[#8BC53D]/40 text-[#8BC53D] text-xs font-black uppercase tracking-widest shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
+            <Sparkles className="w-3.5 h-3.5 fill-current text-[#8BC53D]" />
             <span>Artisan Woodfired Experience</span>
+          </div>
+
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#012F13]/80 border border-[#8BC53D]/25 text-[#E2F0CC] text-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#8BC53D] animate-ping" />
+            <span>450°C Stone Oven Live</span>
           </div>
 
           {manualPullRef.current > 0.05 && (
             <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/50 text-amber-400 text-xs font-mono font-bold animate-pulse">
               <Flame className="w-3.5 h-3.5 fill-amber-400" />
-              <span>{Math.round(manualPullRef.current * 100)}% Stretch</span>
+              <span>{Math.round(manualPullRef.current * 100)}% Cheese Pull</span>
             </div>
           )}
         </div>
 
-        {/* Centered Heading & Subheading with High Contrast Dark Backdrops & Glows */}
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center my-auto px-2">
-          {/* Requested Heading: "demo restaurant" */}
+        {/* 2. Main High-Contrast Headline */}
+        <div className="hero-fade-in mb-3 sm:mb-5">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white lowercase italic tracking-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.95)] leading-none select-text">
             demo <span className="text-[#8BC53D] drop-shadow-[0_0_40px_rgba(139,197,61,0.65)]">restaurant</span>
           </h1>
+        </div>
 
-          {/* Requested Subheading: "scroll to see more." */}
-          <div className="mt-4 px-4 py-1.5 rounded-full bg-[#011207]/60 backdrop-blur-sm border border-[#8BC53D]/20 shadow-lg flex items-center gap-2">
-            <p className="text-sm sm:text-lg md:text-xl text-[#E2F0CC] font-medium tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              scroll to see more.
-            </p>
+        {/* 3. Prominent Floating Pizza Container with Drop-Shadow & Fluid Scaling */}
+        <div className="hero-fade-in relative my-2 sm:my-4 flex flex-col items-center">
+          {/* Outer floating wrapper with 4s breathing animation and radial drop-shadow */}
+          <div
+            ref={pizzaContainerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            className="relative w-[280px] min-[400px]:w-[320px] sm:w-[380px] md:w-[460px] lg:w-[500px] aspect-square mx-auto cursor-grab active:cursor-grabbing touch-pan-y animate-float-pizza [filter:drop-shadow(0_20px_25px_rgba(0,0,0,0.5))]"
+            title="Scroll or drag to stretch mozzarella cheese pull"
+          >
+            {/* Interactive Canvas Renderer */}
+            <canvas
+              ref={canvasRef}
+              className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
+            />
+
+            {/* High-Performance Animated WebP Image Component */}
+            <img
+              src={animatedWebpFeathered}
+              alt="Artisan woodfired pizza with molten mozzarella cheese pull"
+              className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
+              loading="eager"
+            />
+
+            {/* Subtle Outer Crust Accent Ring */}
+            <div className="absolute inset-2 sm:inset-3 rounded-full border border-[#8BC53D]/20 pointer-events-none" />
+          </div>
+
+          {/* Radial ground contact shadow that pulses with floating animation */}
+          <div className="w-44 min-[400px]:w-56 sm:w-72 md:w-84 h-5 sm:h-7 bg-black/65 rounded-full blur-md sm:blur-lg animate-float-shadow -mt-4 sm:-mt-6 pointer-events-none z-0" />
+        </div>
+
+        {/* 4. High-Contrast Subtext */}
+        <div className="hero-fade-in max-w-xl sm:max-w-2xl mx-auto px-2 mt-2 sm:mt-4">
+          <p className="text-base sm:text-lg md:text-xl text-[#E2F0CC] font-medium tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-relaxed">
+            slow-fermented 48h sourdough crust, San Marzano reduction & molten buffalo mozzarella pulled to perfection.
+          </p>
+        </div>
+
+        {/* 5. Call-To-Action (CTA) Action Buttons */}
+        <div className="hero-fade-in flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+          {/* Primary CTA: Explore Menu */}
+          <button
+            onClick={onScrollToMenu}
+            className="group px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#8BC53D] hover:bg-[#9de045] text-[#011207] font-black text-sm sm:text-base tracking-wide flex items-center gap-2.5 transition-all duration-300 shadow-[0_10px_25px_rgba(139,197,61,0.4)] active:scale-95 cursor-pointer"
+          >
+            <Utensils className="w-4 h-4 text-[#011207]" />
+            <span>Explore Menu</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </button>
+
+          {/* Secondary CTA: Chef's Specials */}
+          {onSelectFeaturedItem && (
+            <button
+              onClick={onSelectFeaturedItem}
+              className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#012F13]/90 hover:bg-[#012F13] text-white hover:text-[#8BC53D] border border-[#8BC53D]/40 hover:border-[#8BC53D] font-bold text-sm sm:text-base tracking-wide flex items-center gap-2 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] backdrop-blur-md active:scale-95 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-[#8BC53D]" />
+              <span>Chef's Specials</span>
+            </button>
+          )}
+
+          {/* Info Modal CTA */}
+          {onOpenHoursModal && (
+            <button
+              onClick={onOpenHoursModal}
+              className="px-4 py-2 rounded-full bg-[#011207]/80 hover:bg-[#012F13] text-[#8BC53D] text-xs font-mono font-medium border border-[#8BC53D]/25 transition-all cursor-pointer flex items-center gap-1.5 hover:border-[#8BC53D]/50"
+            >
+              <Clock className="w-3.5 h-3.5" />
+              <span>Hours & Location</span>
+            </button>
+          )}
+        </div>
+
+        {/* 6. Quick Delivery & Trust Indicators */}
+        <div className="hero-fade-in flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6 text-xs text-[#E2F0CC]/80 font-mono">
+          <div className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8BC53D]" />
+            <span>25–35 Min Delivery</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Star className="w-3.5 h-3.5 fill-[#8BC53D] text-[#8BC53D]" />
+            <span>4.9 ★ (500+ Reviews)</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8BC53D]" />
+            <span>100% Halal Certified</span>
           </div>
         </div>
 
-        {/* Bottom Interactive Scroll Indicator Button */}
-        <div className="flex flex-col items-center gap-2">
+        {/* 7. Scroll / Drag Interactive Prompt */}
+        <div className="hero-fade-in mt-8 sm:mt-10 flex flex-col items-center gap-2">
           <button
             ref={indicatorBtnRef}
             onClick={handleScrollToNext}
-            className="group px-6 py-3.5 rounded-full bg-[#012F13]/90 hover:bg-[#8BC53D] text-white hover:text-[#011207] border border-[#8BC53D]/50 hover:border-[#8BC53D] text-xs sm:text-sm font-black lowercase tracking-wider transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.6)] flex items-center gap-2.5 cursor-pointer active:scale-95 backdrop-blur-md"
+            className="group px-6 py-3 rounded-full bg-[#012F13]/90 hover:bg-[#8BC53D] text-white hover:text-[#011207] border border-[#8BC53D]/50 hover:border-[#8BC53D] text-xs sm:text-sm font-black lowercase tracking-wider transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.6)] flex items-center gap-2.5 cursor-pointer active:scale-95 backdrop-blur-md"
             title="scroll to see more."
           >
             <span>scroll to see more.</span>

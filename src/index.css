@@ -44,3 +44,32 @@
   scrollbar-width: none;
 }
 
+/* Floating & Breathing Keyframe Animation for Hero Pizza */
+@keyframes floatPizza {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes floatShadow {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+.animate-float-pizza {
+  animation: floatPizza 4s ease-in-out infinite;
+}
+
+.animate-float-shadow {
+  animation: floatShadow 4s ease-in-out infinite;
+}
+
