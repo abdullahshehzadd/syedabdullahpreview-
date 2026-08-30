@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
-import { ShoppingBag, MapPin, Clock, Search, PhoneCall, Bike } from 'lucide-react';
+import { ShoppingBag, MapPin, Clock, Search, PhoneCall, Bike, Heart } from 'lucide-react';
 import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
 
 interface HeaderProps {
@@ -13,6 +13,8 @@ interface HeaderProps {
   activeOrderStatus?: string | null;
   searchQuery: string;
   onSearchChange: (query: string) => void;
+  favoritesCount?: number;
+  onOpenFavorites?: () => void;
 }
 
 declare global {
@@ -30,10 +32,14 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenTracker,
   activeOrderStatus,
   searchQuery,
-  onSearchChange
+  onSearchChange,
+  favoritesCount = 0,
+  onOpenFavorites
 }) => {
   const badgeRef = useRef<HTMLSpanElement>(null);
+  const favBadgeRef = useRef<HTMLSpanElement>(null);
   const prevCount = useRef(cartCount);
+  const prevFavCount = useRef(favoritesCount);
 
   // Global smooth scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -58,6 +64,21 @@ export const Header: React.FC<HeaderProps> = ({
       prevCount.current = cartCount;
     }
   }, [cartCount]);
+
+  // Micro-bounce animation on favorite count change
+  useEffect(() => {
+    if (favoritesCount !== prevFavCount.current && favBadgeRef.current) {
+      if (typeof window !== 'undefined' && window.anime) {
+        window.anime({
+          targets: favBadgeRef.current,
+          scale: [1, 1.4, 0.95, 1],
+          duration: 350,
+          easing: 'easeOutBack'
+        });
+      }
+      prevFavCount.current = favoritesCount;
+    }
+  }, [favoritesCount]);
 
   return (
     <header
@@ -165,10 +186,36 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
+          {/* Favourites Shortcut Button */}
+          {onOpenFavorites && (
+            <button
+              onClick={onOpenFavorites}
+              className="relative w-11 h-11 rounded-2xl bg-[#012F13] border border-[#8BC53D]/30 hover:border-red-400/60 text-white flex items-center justify-center transition-all cursor-pointer group active:scale-95"
+              aria-label={`View favourite dishes (${favoritesCount})`}
+              title="View favourites"
+            >
+              <Heart
+                className={`w-5 h-5 transition-colors ${
+                  favoritesCount > 0
+                    ? 'text-red-500 fill-red-500'
+                    : 'text-[#E2F0CC]/80 group-hover:text-red-400'
+                }`}
+              />
+              {favoritesCount > 0 && (
+                <span
+                  ref={favBadgeRef}
+                  className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-red-500 text-white text-[10px] font-black font-mono flex items-center justify-center shadow-lg shadow-red-500/30"
+                >
+                  {favoritesCount}
+                </span>
+              )}
+            </button>
+          )}
+
           {/* Cart Icon Button */}
           <button
             onClick={onOpenCart}
-            className="relative w-11 h-11 rounded-2xl bg-[#012F13] border border-[#8BC53D]/30 hover:border-[#8BC53D] text-white flex items-center justify-center transition-all cursor-pointer group"
+            className="relative w-11 h-11 rounded-2xl bg-[#012F13] border border-[#8BC53D]/30 hover:border-[#8BC53D] text-white flex items-center justify-center transition-all cursor-pointer group active:scale-95"
             aria-label={`Open shopping cart (${cartCount} items)`}
           >
             <ShoppingBag className="w-5 h-5 text-[#E2F0CC]/80 group-hover:text-[#8BC53D] transition-colors" />

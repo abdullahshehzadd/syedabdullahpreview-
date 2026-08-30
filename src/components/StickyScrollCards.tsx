@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Sparkles, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Sparkles, ShoppingBag, ArrowRight, Heart } from 'lucide-react';
 import { SIGNATURE_DEALS, SignatureDeal } from '../restaurant.config.ts';
 
 const TILT_PATTERN = [-1.25, 0.85, -0.65, 1.35];
@@ -8,9 +8,16 @@ const TILT_PATTERN = [-1.25, 0.85, -0.65, 1.35];
 interface StickyScrollCardsProps {
   onAddDeal: (deal: SignatureDeal) => void;
   onSelectDeal: (deal: SignatureDeal) => void;
+  favorites?: string[];
+  onToggleFavorite?: (itemId: string, itemName?: string) => void;
 }
 
-export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({ onAddDeal, onSelectDeal }) => {
+export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
+  onAddDeal,
+  onSelectDeal,
+  favorites = [],
+  onToggleFavorite
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -77,14 +84,45 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({ onAddDeal,
                   </span>
                 </div>
 
-                {/* Price Pill */}
-                <div className="absolute top-4 right-4 bg-[#011207]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#8BC53D]/30 flex items-center gap-2">
-                  <span className="text-xs text-[#E2F0CC]/40 line-through font-mono">
-                    PKR {deal.originalPrice.toLocaleString()}
-                  </span>
-                  <span className="text-sm md:text-base font-black text-[#8BC53D] font-mono">
-                    PKR {deal.price.toLocaleString()}
-                  </span>
+                {/* Price Pill & Favourite Button */}
+                <div className="absolute top-4 right-4 flex items-center gap-2">
+                  {onToggleFavorite && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onToggleFavorite(deal.id, deal.title);
+                      }}
+                      className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md transition-all duration-200 cursor-pointer shadow-md active:scale-90 ${
+                        favorites.includes(deal.id)
+                          ? 'bg-red-500/30 text-red-500 border border-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)] scale-105'
+                          : 'bg-[#011207]/90 text-[#E2F0CC]/70 hover:text-red-400 border border-[#8BC53D]/30 hover:scale-110 hover:border-red-400/50'
+                      }`}
+                      aria-label={
+                        favorites.includes(deal.id)
+                          ? `Remove ${deal.title} from favourites`
+                          : `Add ${deal.title} to favourites`
+                      }
+                      title={favorites.includes(deal.id) ? 'Remove from favourites' : 'Add to favourites'}
+                    >
+                      <Heart
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          favorites.includes(deal.id)
+                            ? 'fill-red-500 stroke-red-500 scale-110'
+                            : 'stroke-current hover:stroke-red-400'
+                        }`}
+                      />
+                    </button>
+                  )}
+
+                  <div className="bg-[#011207]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#8BC53D]/30 flex items-center gap-2">
+                    <span className="text-xs text-[#E2F0CC]/40 line-through font-mono">
+                      PKR {deal.originalPrice.toLocaleString()}
+                    </span>
+                    <span className="text-sm md:text-base font-black text-[#8BC53D] font-mono">
+                      PKR {deal.price.toLocaleString()}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Discount % banner */}

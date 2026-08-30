@@ -28,6 +28,15 @@ export default function App() {
     }
   });
 
+  const [favorites, setFavorites] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('demo_restaurant_favorites');
+      return saved ? JSON.parse(saved) : ['burger-truffle', 'pizza-pepperoni'];
+    } catch {
+      return ['burger-truffle', 'pizza-pepperoni'];
+    }
+  });
+
   const [selectedCategory, setSelectedCategory] = useState<string>('combos');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeModalItem, setActiveModalItem] = useState<MenuItem | null>(null);
@@ -46,6 +55,15 @@ export default function App() {
     }
   }, [cartItems]);
 
+  // Sync favorites to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('demo_restaurant_favorites', JSON.stringify(favorites));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [favorites]);
+
   // Toast notification auto-dismiss
   useEffect(() => {
     if (toastMessage) {
@@ -58,6 +76,20 @@ export default function App() {
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
+  };
+
+  // Toggle favorite dish
+  const handleToggleFavorite = (itemId: string, itemName?: string) => {
+    setFavorites((prev) => {
+      const isFav = prev.includes(itemId);
+      if (isFav) {
+        showToast(itemName ? `Removed "${itemName}" from favourites` : 'Removed from favourites');
+        return prev.filter((id) => id !== itemId);
+      } else {
+        showToast(itemName ? `Added "${itemName}" to favourites ❤️` : 'Added to favourites ❤️');
+        return [...prev, itemId];
+      }
+    });
   };
 
   // Quick add from card (optimistic UI <16ms)
@@ -259,6 +291,11 @@ export default function App() {
         activeOrderStatus={activeTrackedOrder?.status || null}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        favoritesCount={favorites.length}
+        onOpenFavorites={() => {
+          setSelectedCategory('favourites');
+          scrollToMenu();
+        }}
       />
 
       {/* 0. Live Scroll Progress Stroke & Showcase Animation (Skiper19) */}
@@ -287,12 +324,16 @@ export default function App() {
           onScrollToMenu={scrollToMenu}
           onSelectFoodItem={(item) => setActiveModalItem(item)}
           onAddToCart={(item) => handleQuickAdd(item)}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* 3. Stacked Signature Deals & Combos Deck */}
         <StickyScrollCards
           onAddDeal={handleAddDeal}
           onSelectDeal={handleSelectDeal}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* 4. Complete Food Menu with Search & Category Filters */}
@@ -303,6 +344,8 @@ export default function App() {
           onSelectFoodItem={(item) => setActiveModalItem(item)}
           onQuickAdd={handleQuickAdd}
           cartItemCounts={cartItemCounts}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* 5. Authentic Direct Ordering Workflow */}
@@ -333,6 +376,8 @@ export default function App() {
         item={activeModalItem}
         onClose={() => setActiveModalItem(null)}
         onAddToCart={handleAddFromModal}
+        isFavorite={activeModalItem ? favorites.includes(activeModalItem.id) : false}
+        onToggleFavorite={handleToggleFavorite}
       />
 
       {/* Directions & Operating Hours Modal */}

@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Plus, Minus, Check, Flame, Star, Sparkles, ShoppingBag } from 'lucide-react';
+import { X, Plus, Minus, Check, Flame, Star, Sparkles, ShoppingBag, Heart } from 'lucide-react';
 import { MenuItem } from '../restaurant.config.ts';
 
 interface ExpandableFoodModalProps {
   item: MenuItem | null;
   onClose: () => void;
   onAddToCart: (item: MenuItem, quantity: number, selectedOptions: string[], totalPrice: number) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (itemId: string, itemName?: string) => void;
 }
 
 export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
   item,
   onClose,
-  onAddToCart
+  onAddToCart,
+  isFavorite = false,
+  onToggleFavorite
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedCustomizations, setSelectedCustomizations] = useState<{ [title: string]: { name: string; price: number } }>({});
@@ -81,14 +85,36 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
           {/* Mobile Sheet Drag Indicator Pill */}
           <div className="w-12 h-1.5 bg-[#E2F0CC]/20 rounded-full mx-auto mt-2 sm:hidden flex-shrink-0" />
 
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-[#011207]/80 backdrop-blur-md text-[#E2F0CC]/70 hover:text-white flex items-center justify-center border border-[#8BC53D]/20 hover:border-[#8BC53D] transition-colors cursor-pointer"
-            aria-label="Close food details modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          {/* Top Actions: Close & Favourite Buttons */}
+          <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+            {onToggleFavorite && (
+              <button
+                type="button"
+                onClick={() => onToggleFavorite(item.id, item.name)}
+                className={`w-10 h-10 rounded-full backdrop-blur-md flex items-center justify-center border transition-all cursor-pointer shadow-lg active:scale-90 ${
+                  isFavorite
+                    ? 'bg-red-500/30 text-red-500 border-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)] scale-105'
+                    : 'bg-[#011207]/80 text-[#E2F0CC]/70 hover:text-red-400 hover:border-red-400/50 border-[#8BC53D]/20'
+                }`}
+                aria-label={isFavorite ? `Remove ${item.name} from favourites` : `Add ${item.name} to favourites`}
+                title={isFavorite ? 'Remove from favourites' : 'Add to favourites'}
+              >
+                <Heart
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isFavorite ? 'fill-red-500 stroke-red-500 scale-110' : 'stroke-current'
+                  }`}
+                />
+              </button>
+            )}
+
+            <button
+              onClick={onClose}
+              className="w-10 h-10 rounded-full bg-[#011207]/80 backdrop-blur-md text-[#E2F0CC]/70 hover:text-white flex items-center justify-center border border-[#8BC53D]/20 hover:border-[#8BC53D] transition-colors cursor-pointer shadow-lg"
+              aria-label="Close food details modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
           {/* Modal Hero Image */}
           <div className="relative h-60 sm:h-72 w-full overflow-hidden flex-shrink-0 bg-[#011207]">

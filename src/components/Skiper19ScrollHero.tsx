@@ -10,7 +10,8 @@ import {
   CheckCircle2, 
   Sparkles,
   Award,
-  Timer
+  Timer,
+  Heart
 } from 'lucide-react';
 import { MenuItem } from '../restaurant.config.ts';
 
@@ -19,6 +20,8 @@ interface Skiper19ScrollHeroProps {
   onScrollToMenu: () => void;
   onSelectFoodItem: (item: MenuItem) => void;
   onAddToCart?: (item: MenuItem) => void;
+  favorites?: string[];
+  onToggleFavorite?: (itemId: string, itemName?: string) => void;
 }
 
 interface SignatureItem {
@@ -122,12 +125,15 @@ const SIGNATURE_ITEMS: SignatureItem[] = [
 export const Skiper19ScrollHero: React.FC<Skiper19ScrollHeroProps> = ({
   onScrollToMenu,
   onSelectFoodItem,
-  onAddToCart
+  onAddToCart,
+  favorites = [],
+  onToggleFavorite
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [addedItemName, setAddedItemName] = useState<string | null>(null);
 
   const activeItem = SIGNATURE_ITEMS[activeIndex];
+  const isFavorited = favorites.includes(activeItem.dish.id);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? SIGNATURE_ITEMS.length - 1 : prev - 1));
@@ -259,9 +265,40 @@ export const Skiper19ScrollHero: React.FC<Skiper19ScrollHeroProps> = ({
                     <span>{activeItem.badge}</span>
                   </div>
 
-                  {/* Price Tag */}
-                  <div className="absolute top-3.5 right-3.5 bg-[#011207]/90 backdrop-blur-md px-3 py-1 rounded-lg border border-[#8BC53D]/40 text-xs sm:text-sm font-black text-[#8BC53D] font-mono shadow-md">
-                    {activeItem.priceFormatted}
+                  {/* Price Tag & Favourite Button */}
+                  <div className="absolute top-3.5 right-3.5 flex items-center gap-2">
+                    {onToggleFavorite && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onToggleFavorite(activeItem.dish.id, activeItem.dish.name);
+                        }}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md transition-all duration-200 cursor-pointer shadow-md active:scale-90 ${
+                          isFavorited
+                            ? 'bg-red-500/30 text-red-500 border border-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)] scale-105'
+                            : 'bg-[#011207]/90 text-[#E2F0CC]/70 hover:text-red-400 border border-[#8BC53D]/40 hover:scale-110 hover:border-red-400/50'
+                        }`}
+                        aria-label={
+                          isFavorited
+                            ? `Remove ${activeItem.dish.name} from favourites`
+                            : `Add ${activeItem.dish.name} to favourites`
+                        }
+                        title={isFavorited ? 'Remove from favourites' : 'Add to favourites'}
+                      >
+                        <Heart
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            isFavorited
+                              ? 'fill-red-500 stroke-red-500 scale-110'
+                              : 'stroke-current hover:stroke-red-400'
+                          }`}
+                        />
+                      </button>
+                    )}
+
+                    <div className="bg-[#011207]/90 backdrop-blur-md px-3 py-1 rounded-lg border border-[#8BC53D]/40 text-xs sm:text-sm font-black text-[#8BC53D] font-mono shadow-md">
+                      {activeItem.priceFormatted}
+                    </div>
                   </div>
 
                   {/* Bottom Fact Box */}
