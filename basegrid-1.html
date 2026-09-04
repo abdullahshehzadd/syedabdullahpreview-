@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js-ready');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Basegrid | Custom Restaurant Website & Digital Menu Developer</title>
+<meta name="description" content="Custom restaurant websites & digital menus with WhatsApp ordering. Zero commissions. Get your free 48-hour preview today." />
+<meta name="keywords" content="restaurant website Pakistan, digital menu design, WhatsApp ordering website, restaurant web developer, food brand website, Basegrid" />
+<meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content="9z9p13H9kDRUmXYPB0aXnkFRYq4WFY8QfoMS2z9jkHQ" />
+<link rel="canonical" href="https://basegridpreview.vercel.app/" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238BC53D'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23011207'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+
+<meta property="og:title" content="Basegrid | Custom Restaurant Website & Digital Menu Developer" />
+<meta property="og:description" content="Custom restaurant websites & digital menus with WhatsApp ordering. Zero commissions. Get your free 48-hour preview today." />
+<meta property="og:image" content="https://basegridpreview.vercel.app/og-image.jpg" />
+<meta property="og:url" content="https://basegridpreview.vercel.app/" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Basegrid | Custom Restaurant Website & Digital Menu Developer" />
+<meta name="twitter:description" content="Custom restaurant websites & digital menus with WhatsApp ordering. Zero commissions. Get your free 48-hour preview today." />
+<meta name="twitter:image" content="https://basegridpreview.vercel.app/og-image.jpg" />
+
+<meta name="theme-color" content="#011207" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Basegrid",
+  "url": "https://basegridpreview.vercel.app/",
+  "image": "https://basegridpreview.vercel.app/og-image.jpg",
+  "logo": "https://basegridpreview.vercel.app/og-image.jpg",
+  "description": "Basegrid builds custom digital menus and high-converting restaurant websites for Pakistani food brands, with direct WhatsApp ordering and zero commission on orders.",
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "sameAs": ["https://www.instagram.com/basegrid.pk"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+923347383967",
+    "contactType": "customer service",
+    "areaServed": "PK"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast can our menu website go live?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most restaurants get a working preview link within 48 hours of sending their menu and photos on WhatsApp. Once you approve it, we can take it live the same day." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we update our own menu items and prices later?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send any menu or price changes to us on WhatsApp and we update the live site for you \u2014 no coding or logins required on your end." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who handles hosting and is there a monthly fee?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Basegrid handles all hosting as part of your build. There is a simple Rs. 1,500/month fee that covers hosting, domain maintenance, menu updates, and WhatsApp integration support \u2014 and we never take a commission from your orders." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does WhatsApp ordering actually work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Customers browse your digital menu, tap \u2018Order on WhatsApp\u2019, and a pre-filled message with their order opens straight in their WhatsApp app, sent to your business number \u2014 no extra app or account needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need our own domain name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No \u2014 we can launch on a Basegrid subdomain right away, or connect your own domain if you already have one." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#011207;
+    --card:#012F13;
+    --accent:#8BC53D;
+    --mint:#E2F0CC;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--mint);
+    font-family:'Instrument Sans','Helvetica Neue',sans-serif;
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Fraunces',Georgia,serif;}
+  .mono{font-family:'JetBrains Mono','Courier New',monospace;}
+  ::selection{background:var(--accent);color:var(--bg);}
+  .headline-white{ color:#FFFFFF; }
+
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1;
+    opacity:0.045; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .dot-grid{ background-image: radial-gradient(rgba(226,240,204,0.14) 1px, transparent 1.4px); background-size: 22px 22px; }
+  .accent-text{color:var(--accent);}
+  .eyebrow{ color:var(--accent); }
+  .eyebrow svg{ width:9px; height:26px; }
+
+  .tap{ min-height:48px; }
+  .magnetic{ transition:transform .2s cubic-bezier(.16,1,.3,1); display:inline-flex; }
+
+  .btn-accent{ background:var(--accent); color:var(--bg); transition:transform .25s ease, box-shadow .25s ease; }
+  .btn-accent:hover{ box-shadow:0 14px 32px -10px rgba(139,197,61,0.55); }
+  .btn-accent:not(.magnetic):hover{ transform:translateY(-2px); }
+  .btn-outline{ border:1px solid rgba(139,197,61,0.3); transition:border-color .25s ease, background .25s ease, transform .25s ease; }
+  .btn-outline:hover{ border-color:var(--accent); background:rgba(139,197,61,0.08); transform:translateY(-2px); }
+
+  @keyframes ctaGlow{ 0%,100%{ box-shadow:0 0 16px 0 rgba(139,197,61,0.3);} 50%{ box-shadow:0 0 28px 3px rgba(139,197,61,0.5);} }
+  .cta-glow{ animation:ctaGlow 3s ease-in-out infinite; }
+
+  .card{ background:rgba(1,47,19,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(139,197,61,0.2); }
+
+  #scrollProgressBar{ position:fixed; top:0; left:0; height:2px; width:0%; background:var(--accent); z-index:70; }
+
+  #siteNav{ background:rgba(1,47,19,0.42); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(139,197,61,0.2); }
+  #siteNav.scrolled{ box-shadow:0 10px 30px -18px rgba(0,0,0,0.85); background:rgba(1,47,19,0.65); }
+  .nav-link{ position:relative; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-5px; width:100%; height:1.5px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+  .nav-link:hover::after{ transform:scaleX(1); }
+  .logo-mark{ height:2rem; width:2rem; border-radius:.5rem; object-fit:cover; border:1px solid rgba(139,197,61,0.35); background:var(--card); }
+  @media (min-width:768px){ .logo-mark{ height:2.25rem; width:2.25rem; } }
+
+  .hamburger{ width:44px; height:44px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; position:relative; z-index:70; }
+  .hamburger-line{ width:20px; height:2px; background:var(--mint); transition:transform .35s cubic-bezier(.16,1,.3,1), opacity .25s ease; }
+  .hamburger.is-open .line1{ transform:translateY(7px) rotate(45deg); }
+  .hamburger.is-open .line2{ opacity:0; }
+  .hamburger.is-open .line3{ transform:translateY(-7px) rotate(-45deg); }
+
+  #drawerBackdrop{ position:fixed; inset:0; background:rgba(1,18,7,0.6); opacity:0; pointer-events:none; transition:opacity .35s ease; z-index:60; }
+  #drawerBackdrop.is-open{ opacity:1; pointer-events:auto; }
+  #mobileDrawer{
+    position:fixed; top:0; right:0; height:100%; width:78%; max-width:320px; z-index:65;
+    background:rgba(1,18,7,0.97); backdrop-filter:blur(18px); border-left:1px solid rgba(139,197,61,0.2);
+    transform:translateX(100%); transition:transform .45s cubic-bezier(.16,1,.3,1);
+  }
+  #mobileDrawer.is-open{ transform:translateX(0); }
+
+  /* ---- package confirmation modal ---- */
+  #packageModal{ position:fixed; inset:0; z-index:90; display:flex; align-items:center; justify-content:center; padding:1.25rem; opacity:0; pointer-events:none; transition:opacity .3s cubic-bezier(.16,1,.3,1); background:rgba(1,18,7,0.65); backdrop-filter:blur(6px); }
+  #packageModal.is-open{ opacity:1; pointer-events:auto; }
+  .package-modal-panel{ transform:scale(0.94) translateY(8px); transition:transform .3s cubic-bezier(.16,1,.3,1); }
+  #packageModal.is-open .package-modal-panel{ transform:scale(1) translateY(0); }
+
+  .ticket-card{
+    position:relative; overflow:hidden; border-radius:12px;
+    background:rgba(1,47,19,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(139,197,61,0.2);
+    display:block; will-change:transform;
+    transition:border-color .2s ease, box-shadow .25s ease;
+  }
+  .ticket-card:hover{ border-color:rgba(139,197,61,0.45); box-shadow:0 16px 36px -16px rgba(139,197,61,0.45); }
+  .ticket-notch{ position:absolute; top:-6px; left:0; right:0; height:12px; background-image:radial-gradient(circle, var(--bg) 5px, transparent 5.4px); background-size:18px 12px; background-repeat:repeat-x; background-position:-3px 0; pointer-events:none; }
+  .tilt-glare{ position:absolute; inset:0; pointer-events:none; border-radius:inherit; background:transparent; }
+  .stamp{ border:1.5px solid var(--bg); color:var(--bg); transform:rotate(-9deg); }
+  .icon-glow{ filter:drop-shadow(0 0 6px rgba(139,197,61,0.55)); }
+
+  @keyframes introScaleDown{ from{ transform:scale(1.1); } to{ transform:scale(1); } }
+  @keyframes introSlideUp{ from{ opacity:0; transform:translateY(24px);} to{ opacity:1; transform:translateY(0);} }
+  @keyframes introFadeIn{ from{opacity:0;} to{opacity:1;} }
+  .js-ready .intro-media{ animation:introScaleDown 1.1s cubic-bezier(.16,1,.3,1) both; }
+  .js-ready .intro-text{ animation:introSlideUp .9s cubic-bezier(.16,1,.3,1) .2s both; }
+  .js-ready .intro-text-2{ animation:introSlideUp .9s cubic-bezier(.16,1,.3,1) .38s both; }
+  .js-ready .intro-nav{ animation:introFadeIn 1s ease both; }
+  .js-ready .intro-glow{ animation:introFadeIn 1.5s ease .15s both; }
+
+  .hero-media{ position:relative; overflow:hidden; }
+  .hero-track{ display:flex; height:100%; transition:transform .6s cubic-bezier(.16,1,.3,1); will-change:transform; }
+  .hero-slide{ flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .hero-dot-hit{ padding:9px; background:none; border:none; cursor:pointer; }
+  .hero-dot{ display:block; width:7px; height:7px; border-radius:9999px; background:rgba(226,240,204,0.35); transition:background .3s ease, width .3s ease; }
+  .hero-dot.active{ background:var(--accent); width:20px; }
+
+  .glass-badge{ background:rgba(1,47,19,0.45); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(139,197,61,0.25); box-shadow:0 10px 28px -12px rgba(0,0,0,0.55); }
+  .pill{ border-radius:9999px; padding:.5rem 1rem; }
+
+  .phone-shell{ background:linear-gradient(180deg, #06210d, #011207 65%); border:1px solid rgba(139,197,61,0.2); }
+  .browser-chrome{ background:rgba(1,18,7,0.75); border:1px solid rgba(139,197,61,0.2); border-bottom:none; }
+  .tab-btn{ transition:background .2s ease, color .2s ease; }
+  .tab-btn.active{ background:var(--accent); color:var(--bg); }
+  .menu-item{ border-bottom:1px solid rgba(226,240,204,0.08); }
+  .pulse-dot{ animation:pulse 2s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(139,197,61,0.55);} 70%{box-shadow:0 0 0 14px rgba(139,197,61,0);} 100%{box-shadow:0 0 0 0 rgba(139,197,61,0);} }
+
+  .receipt{ border:1px dashed rgba(139,197,61,0.3); background:rgba(226,240,204,0.03); }
+  .leader{ border-bottom:1px dotted rgba(226,240,204,0.3); transform:translateY(-4px); }
+
+  .float-wa{ animation:floaty 3s ease-in-out infinite; }
+  @keyframes floaty{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+
+  .reveal{ opacity:1; transform:none; }
+  .js-ready .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  .js-ready .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  .step-tag{ border:1px solid rgba(139,197,61,0.5); color:var(--accent); }
+
+  .letters-stage{ perspective:700px; }
+  .letter{ display:inline-block; will-change:transform, opacity; }
+  .icon-char{ display:inline-block; will-change:transform, opacity; }
+  .icon-char svg{ width:2rem; height:2rem; }
+  @media (min-width:768px){ .icon-char svg{ width:2.6rem; height:2.6rem; } }
+
+  .tear-strip{ height:14px; width:100%; background-image:radial-gradient(circle, var(--bg) 6px, transparent 6.4px); background-size:20px 14px; background-position:-2px -7px; }
+
+  .faq-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s cubic-bezier(.16,1,.3,1); }
+  .faq-item.is-open .faq-panel{ grid-template-rows:1fr; }
+  .faq-chevron{ transition:transform .3s ease; }
+  .faq-item.is-open .faq-chevron{ transform:rotate(180deg); }
+
+  .field-input{ background:rgba(226,240,204,0.05); border:1px solid rgba(226,240,204,0.2); color:var(--mint); min-height:48px; }
+  .field-input:focus{ outline:none; border-color:var(--accent); background:rgba(226,240,204,0.08); }
+  .field-input::placeholder{ color:rgba(226,240,204,0.35); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bracketIcon" viewBox="0 0 27 78">
+    <path fill="currentColor" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+  </symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<div id="scrollProgressBar" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- ================= NAV ================= -->
+<header id="siteNav" class="intro-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="#top" class="flex items-center gap-2.5">
+        <img src="favicon.jpg" alt="Basegrid logo" class="logo-mark" width="36" height="36" />
+        <span class="serif text-xl md:text-2xl font-bold" style="color:#FFFFFF">Basegrid</span>
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-8 mono text-[12px] tracking-widest uppercase" style="color:rgba(226,240,204,0.8)">
+        <a href="#work" class="nav-link tap inline-flex items-center">Work</a>
+        <a href="#features" class="nav-link tap inline-flex items-center">7 Features</a>
+        <a href="#pricing" class="nav-link tap inline-flex items-center">Pricing</a>
+        <a href="#process" class="nav-link tap inline-flex items-center">Process</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant."
+           target="_blank" rel="noopener noreferrer"
+           class="tap magnetic hidden sm:inline-flex btn-accent cta-glow items-center gap-2 rounded-full px-5 py-2.5 mono text-[11px] tracking-widest uppercase font-semibold">
+          Request Free Demo
+        </a>
+        <button id="menuToggle" class="hamburger md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line line1" aria-hidden="true"></span>
+          <span class="hamburger-line line2" aria-hidden="true"></span>
+          <span class="hamburger-line line3" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="drawerBackdrop"></div>
+<div id="mobileDrawer">
+  <nav aria-label="Mobile" class="flex flex-col gap-6 p-8 pt-8 mono text-sm uppercase tracking-widest">
+    <div class="flex items-center gap-2.5 mb-6">
+      <img src="favicon.jpg" alt="Basegrid logo" class="logo-mark" width="36" height="36" />
+      <span class="serif text-xl font-bold normal-case" style="color:#FFFFFF">Basegrid</span>
+    </div>
+    <a href="#work" class="drawer-link tap flex items-center">Work</a>
+    <a href="#features" class="drawer-link tap flex items-center">7 Features</a>
+    <a href="#pricing" class="drawer-link tap flex items-center">Pricing</a>
+    <a href="#process" class="drawer-link tap flex items-center">Process</a>
+    <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant."
+       target="_blank" rel="noopener noreferrer"
+       class="tap btn-accent flex items-center justify-center text-center rounded-full px-5 py-3 font-semibold mt-4 normal-case">Request Free Demo</a>
+  </nav>
+</div>
+
+<!-- ================= PACKAGE CONFIRM MODAL ================= -->
+<div id="packageModal">
+  <div class="package-modal-panel ticket-card w-full max-w-sm p-7" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle">
+    <div class="ticket-notch"></div>
+    <button type="button" id="packageModalClose" class="tap absolute top-2 right-2 w-11 h-11 grid place-items-center rounded-full" aria-label="Close dialog">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <p class="mono text-[10px] tracking-widest uppercase accent-text">Confirm your package</p>
+    <h3 id="packageModalTitle" class="serif text-xl font-semibold mt-2"><span id="packageModalName">Package</span></h3>
+    <p class="text-sm mt-2" id="packageModalDesc" style="color:rgba(226,240,204,0.65);"></p>
+    <a id="packageModalCta" href="#" target="_blank" rel="noopener noreferrer" class="tap btn-accent flex items-center justify-center gap-2 rounded-full py-3.5 mt-6 mono text-[11px] tracking-widest uppercase font-semibold">
+      Continue to WhatsApp
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="top" aria-labelledby="hero-heading" class="relative pt-24 md:pt-28 pb-16 md:pb-20 dot-grid overflow-hidden">
+  <div id="heroSpot" class="intro-glow absolute inset-0 pointer-events-none" aria-hidden="true" style="background:radial-gradient(650px circle at 50% 5%, rgba(139,197,61,0.16), transparent 70%);"></div>
+  <div class="intro-glow absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full pointer-events-none" aria-hidden="true" style="background:rgba(139,197,61,0.12); filter:blur(90px);"></div>
+
+  <div class="relative max-w-5xl mx-auto px-5 md:px-8">
+
+    <div class="intro-media hero-media w-full h-[270px] sm:h-[320px] md:h-[400px] rounded-t-[26px]" style="background:var(--card); border:1px solid rgba(139,197,61,0.2); border-bottom:none;">
+      <div id="heroTrack" class="hero-track" style="width:300%;">
+
+        <div class="hero-slide text-center px-6" style="width:33.3333%;">
+          <span class="mono text-[10px] tracking-widest opacity-50 mb-3">01 / 03</span>
+          <div class="flex gap-2 mb-5 flex-wrap justify-center">
+            <span class="mono text-[10px] uppercase tracking-wide pill" style="background:var(--accent); color:var(--bg); padding:.4rem .9rem;">Starters</span>
+            <span class="mono text-[10px] uppercase tracking-wide pill border" style="border-color:rgba(139,197,61,0.3); color:var(--mint); padding:.4rem .9rem;">Mains</span>
+            <span class="mono text-[10px] uppercase tracking-wide pill border" style="border-color:rgba(139,197,61,0.3); color:var(--mint); padding:.4rem .9rem;">Drinks</span>
+          </div>
+          <p class="serif text-xl md:text-3xl font-semibold" style="color:#FFFFFF">Your menu, digitized</p>
+          <p class="text-xs md:text-sm mt-2 max-w-xs mx-auto" style="color:rgba(226,240,204,0.6)">Searchable and categorized — not a scanned PDF.</p>
+        </div>
+
+        <div class="hero-slide text-center px-6" style="width:33.3333%;">
+          <span class="mono text-[10px] tracking-widest opacity-50 mb-3">02 / 03</span>
+          <div class="rounded-2xl px-5 py-3.5 mb-5 max-w-[240px] mx-auto text-left" style="background:var(--accent);">
+            <p class="mono text-[11px]" style="color:var(--bg);">"Hi, I'd like to order 2 Chicken Karahi please"</p>
+          </div>
+          <p class="serif text-xl md:text-3xl font-semibold" style="color:#FFFFFF">One tap. Order sent.</p>
+          <p class="text-xs md:text-sm mt-2 max-w-xs mx-auto" style="color:rgba(226,240,204,0.6)">Every order lands straight in your WhatsApp.</p>
+        </div>
+
+        <div class="hero-slide text-center px-6" style="width:33.3333%;">
+          <span class="mono text-[10px] tracking-widest opacity-50 mb-3">03 / 03</span>
+          <span class="stamp mono text-xs font-bold px-3 py-1.5 rounded-md mb-5 inline-block" style="border-color:var(--accent); color:var(--accent);">CONFIRMED</span>
+          <p class="serif text-xl md:text-3xl font-semibold" style="color:#FFFFFF">Bookings, handled.</p>
+          <p class="text-xs md:text-sm mt-2 max-w-xs mx-auto" style="color:rgba(226,240,204,0.6)">Customers book direct — no third-party app.</p>
+        </div>
+
+      </div>
+
+      <div id="heroDots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+        <button class="hero-dot-hit" data-i="0" aria-label="Show slide 1 of 3"><span class="hero-dot active"></span></button>
+        <button class="hero-dot-hit" data-i="1" aria-label="Show slide 2 of 3"><span class="hero-dot"></span></button>
+        <button class="hero-dot-hit" data-i="2" aria-label="Show slide 3 of 3"><span class="hero-dot"></span></button>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-px" style="background:rgba(139,197,61,0.2);">
+      <div class="intro-text p-7 md:p-9 rounded-bl-[26px] md:rounded-br-none" style="background:var(--card);">
+        <div class="eyebrow inline-flex items-center gap-3 mono text-[10px] tracking-[0.25em] uppercase mb-4">
+          <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+          Built for Pakistani food brands
+          <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        </div>
+        <h1 id="hero-heading" class="headline-white serif font-semibold leading-[1.1] text-2xl sm:text-3xl md:text-[2.1rem] tracking-tight">
+          Stop losing orders to 20% app commissions. Turn visitors into <span class="accent-text italic">direct WhatsApp sales</span>.
+        </h1>
+        <p class="mt-4 text-sm md:text-base" style="color:rgba(226,240,204,0.72)">Custom web menus and instant ordering previews, built for Pakistani dining brands.</p>
+
+        <div class="inline-flex items-center gap-2 rounded-full px-4 py-2.5 mt-5 mono text-[10px] sm:text-[11px] font-semibold" style="background:rgba(139,197,61,0.12); border:1px solid rgba(139,197,61,0.3); color:var(--accent);">
+          <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--accent)"></span>
+          Keep 100% of your revenue — 0% marketplace commission
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant."
+             target="_blank" rel="noopener noreferrer"
+             class="tap magnetic btn-accent rounded-full px-6 py-3.5 mono text-[11px] tracking-widest uppercase font-semibold inline-flex items-center justify-center gap-2">
+            Get Your Free 48-Hour Preview
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#work" class="tap btn-outline rounded-full px-6 py-3.5 mono text-[11px] tracking-widest uppercase font-semibold text-center inline-flex items-center justify-center" style="color:var(--mint)">
+            Test Live Demo
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="pill mono text-[9px] uppercase tracking-wide border" style="border-color:rgba(139,197,61,0.3); color:rgba(226,240,204,0.75); padding:.35rem .8rem;">48h Turnaround</span>
+          <span class="pill mono text-[9px] uppercase tracking-wide border" style="border-color:rgba(139,197,61,0.3); color:rgba(226,240,204,0.75); padding:.35rem .8rem;">No Tech Skills Required</span>
+          <span class="pill mono text-[9px] uppercase tracking-wide border" style="border-color:rgba(139,197,61,0.3); color:rgba(226,240,204,0.75); padding:.35rem .8rem;">Direct WhatsApp Checkout</span>
+        </div>
+      </div>
+
+      <div class="intro-text-2 p-7 md:p-9 rounded-br-[26px] md:rounded-bl-none" style="background:var(--card);">
+        <div class="rounded-xl overflow-hidden mb-4" style="border:1px solid rgba(139,197,61,0.2); background:linear-gradient(180deg,#06210d,#011207 65%);">
+          <div class="flex items-center gap-1.5 px-3 py-2" style="background:rgba(1,18,7,0.6);">
+            <span class="w-1.5 h-1.5 rounded-full" aria-hidden="true" style="background:var(--accent)"></span>
+            <span class="mono text-[9px] ml-1 opacity-70">Tap to test ordering ↓</span>
+          </div>
+          <div class="p-4">
+            <div id="heroCartItems" class="space-y-2.5">
+              <div class="flex items-center justify-between text-xs gap-2">
+                <span>Chicken Tikka Skewers</span>
+                <button type="button" class="hero-cart-add tap shrink-0 mono text-[10px] px-2.5 rounded-full" data-item="Chicken Tikka Skewers" data-price="850" style="border:1px solid rgba(139,197,61,0.4); color:var(--accent);">+ Add</button>
+              </div>
+              <div class="flex items-center justify-between text-xs gap-2">
+                <span>Loaded Fries</span>
+                <button type="button" class="hero-cart-add tap shrink-0 mono text-[10px] px-2.5 rounded-full" data-item="Loaded Fries" data-price="650" style="border:1px solid rgba(139,197,61,0.4); color:var(--accent);">+ Add</button>
+              </div>
+              <div class="flex items-center justify-between text-xs gap-2">
+                <span>Mango Lassi</span>
+                <button type="button" class="hero-cart-add tap shrink-0 mono text-[10px] px-2.5 rounded-full" data-item="Mango Lassi" data-price="400" style="border:1px solid rgba(139,197,61,0.4); color:var(--accent);">+ Add</button>
+              </div>
+            </div>
+            <div class="mt-3 pt-3 flex items-center justify-between mono text-xs" style="border-top:1px dashed rgba(139,197,61,0.25);">
+              <span>Cart: <span id="heroCartCount">0</span> items</span>
+              <span id="heroCartTotal">Rs. 0</span>
+            </div>
+            <a id="heroCartCheckout" href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer"
+               class="tap btn-accent flex items-center justify-center text-center rounded-full py-3 mt-3 mono text-[10px] uppercase tracking-widest font-semibold">Checkout on WhatsApp</a>
+          </div>
+        </div>
+        <p class="text-xs" style="color:rgba(226,240,204,0.6)">This is a live, working demo — the same ordering flow every Basegrid client gets.</p>
+        <a href="https://basegridpreview.vercel.app/" target="_blank" rel="noopener noreferrer"
+           class="tap btn-outline inline-flex items-center gap-2 rounded-full px-5 py-2.5 mt-4 mono text-[10px] tracking-widest uppercase font-semibold" style="color:var(--mint)">
+          Open Fullscreen Demo
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SCROLL CHARACTER ANIMATION ================= -->
+<section id="scrollAnim" aria-hidden="true" class="relative" style="height:130vh;">
+  <div class="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden" style="background:var(--card);">
+    <div class="eyebrow flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-8 opacity-70">
+      <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+      Scroll to see it in action
+      <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+    </div>
+    <div id="lettersWrap" class="letters-stage serif font-bold uppercase text-center leading-none text-[1.9rem] sm:text-5xl md:text-6xl lg:text-7xl px-4" style="color:var(--accent)"></div>
+    <div id="iconsWrap" class="mt-10 md:mt-14 flex items-center justify-center gap-4 md:gap-7 flex-wrap px-4"></div>
+    <p id="scrollSub" class="mt-10 text-sm md:text-base text-center max-w-md px-6" style="color:rgba(226,240,204,0.55); opacity:0; transition:opacity .6s ease;">
+      One scroll. One menu. Every order lands straight on your phone.
+    </p>
+  </div>
+</section>
+
+<!-- ================= FEATURED CLIENT SHOWCASE ================= -->
+<section id="work" aria-labelledby="work-heading" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <div class="reveal">
+        <div class="eyebrow inline-flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-5">
+          <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+          Live restaurant demo
+          <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        </div>
+        <h2 id="work-heading" class="headline-white serif font-semibold text-3xl md:text-[2.6rem] leading-tight">
+          See exactly what <span class="accent-text italic">your customers</span> would experience.
+        </h2>
+        <p class="mt-5 text-base md:text-lg" style="color:rgba(226,240,204,0.7)">
+          This is a real, working demo — the same kind of build every Basegrid client gets. A searchable digital menu, live category tabs, and one-tap WhatsApp ordering, ready in 48 hours.
+        </p>
+
+        <div id="statBlock" class="receipt rounded-xl px-6 py-5 mt-8 max-w-sm" style="transform:rotate(-1deg);">
+          <div class="flex items-baseline gap-2 mono text-xs">
+            <span class="uppercase tracking-wide opacity-70">Delivery time</span>
+            <span class="leader flex-1"></span>
+            <span class="font-semibold accent-text text-sm" id="statDelivery">0H</span>
+          </div>
+          <div class="flex items-baseline gap-2 mono text-xs mt-3">
+            <span class="uppercase tracking-wide opacity-70">Commission</span>
+            <span class="leader flex-1"></span>
+            <span class="font-semibold accent-text text-sm">0%</span>
+          </div>
+          <div class="flex items-baseline gap-2 mono text-xs mt-3">
+            <span class="uppercase tracking-wide opacity-70">Load time</span>
+            <span class="leader flex-1"></span>
+            <span class="font-semibold accent-text text-sm" id="statLoad">0.0S</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer"
+           class="tap btn-outline inline-flex items-center gap-2 rounded-full px-6 py-3 mt-9 mono text-[11px] tracking-widest uppercase font-semibold" style="color:var(--mint)">
+          Get a preview like this
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal flex flex-col items-center">
+
+        <a href="https://basegridpreview.vercel.app/" target="_blank" rel="noopener noreferrer"
+           class="tap btn-outline inline-flex items-center gap-2 rounded-full px-5 py-2.5 mb-5 mono text-[11px] tracking-widest uppercase font-semibold" style="color:var(--mint)">
+          Open Fullscreen Demo
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+
+        <div class="relative">
+          <div class="absolute -top-5 -left-5 z-20 card rounded-lg px-4 py-2.5 mono text-[10px] uppercase tracking-widest shadow-xl" style="transform:rotate(-4deg);">
+            <span class="flex items-center gap-1.5 accent-text font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full pulse-dot" aria-hidden="true" style="background:var(--accent)"></span>
+              Live preview
+            </span>
+          </div>
+
+          <div class="reveal absolute -top-6 -right-5 z-20 hidden sm:block" style="transition-delay:.1s;">
+            <div class="glass-badge rounded-xl px-3.5 py-2.5">
+              <p class="mono text-[9px] uppercase tracking-widest opacity-60">Avg. order</p>
+              <p class="mono text-sm font-bold accent-text mt-0.5">Rs. 1,200</p>
+            </div>
+          </div>
+          <div class="reveal absolute -bottom-5 -right-7 z-20 hidden sm:block" style="transition-delay:.25s;">
+            <div class="glass-badge rounded-xl px-3.5 py-2.5 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full pulse-dot" aria-hidden="true" style="background:var(--accent)"></span>
+              <p class="mono text-[10px] uppercase tracking-wide">Instant Order CTA</p>
+            </div>
+          </div>
+
+          <div id="phoneTiltGroup" class="w-[270px] sm:w-[300px]" style="transform:perspective(1000px) rotateY(-6deg) rotateX(3deg); transition:transform .2s ease-out; will-change:transform;">
+            <div class="browser-chrome mono text-[9px] flex items-center gap-1.5 px-4 py-2.5 rounded-t-xl">
+              <span class="w-2 h-2 rounded-full" aria-hidden="true" style="background:rgba(226,240,204,0.25)"></span>
+              <span class="w-2 h-2 rounded-full" aria-hidden="true" style="background:rgba(226,240,204,0.4)"></span>
+              <span class="w-2 h-2 rounded-full" aria-hidden="true" style="background:var(--accent)"></span>
+              <span class="ml-2 opacity-50 truncate">basegridpreview.vercel.app</span>
+            </div>
+
+            <div class="phone-shell rounded-b-xl p-3" style="border-top:none;">
+              <div class="px-2 pt-2 pb-4">
+                <p class="serif text-lg font-semibold">Your Restaurant</p>
+                <p class="mono text-[10px]" style="color:rgba(226,240,204,0.5)">Your Cuisine · Your City</p>
+              </div>
+
+              <div id="menuTabs" class="flex gap-2 px-2 pb-4 overflow-x-auto">
+                <button data-tab="starters" class="tab-btn active whitespace-nowrap mono text-[10px] uppercase tracking-wide font-semibold px-4 py-2 rounded-full border border-[rgba(139,197,61,0.25)]">Starters</button>
+                <button data-tab="mains" class="tab-btn whitespace-nowrap mono text-[10px] uppercase tracking-wide font-semibold px-4 py-2 rounded-full border border-[rgba(139,197,61,0.25)]" style="color:var(--mint)">Mains</button>
+                <button data-tab="drinks" class="tab-btn whitespace-nowrap mono text-[10px] uppercase tracking-wide font-semibold px-4 py-2 rounded-full border border-[rgba(139,197,61,0.25)]" style="color:var(--mint)">Drinks</button>
+              </div>
+
+              <div id="menuList" class="px-2 pb-5 min-h-[210px]"></div>
+
+              <div class="px-2 pb-2">
+                <button id="waOrderBtn" class="tap w-full rounded-2xl py-3.5 mono text-[11px] tracking-widest uppercase font-semibold flex items-center justify-center gap-2 btn-accent">
+                  <span class="w-2 h-2 rounded-full pulse-dot" aria-hidden="true" style="background:var(--bg);"></span>
+                  Order on WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-center gap-2 mono text-[10px] uppercase tracking-widest opacity-45">
+            <span class="w-1.5 h-1.5 rounded-full" aria-hidden="true" style="background:var(--accent)"></span>
+            Live · Updated today
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 FEATURES ================= -->
+<section id="features" aria-labelledby="features-heading" class="relative py-24 md:py-32" style="background:linear-gradient(180deg, transparent, rgba(1,47,19,0.35), transparent);">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl reveal">
+      <div class="eyebrow inline-flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-5">
+        <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        What you get
+        <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+      </div>
+      <h2 id="features-heading" class="headline-white serif font-semibold text-3xl md:text-[2.6rem] leading-tight">Seven things every one of our menus ships with.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
+
+      <div class="reveal" style="transform:rotate(-1.1deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 01</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Search icon for interactive mobile menus</title><path d="M11 17a6 6 0 100-12 6 6 0 000 12z"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Interactive mobile menus</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">Search-ready. Categorized. Zero PDFs.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(0.9deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 02</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Chat bubble icon for WhatsApp ordering</title><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">1-click WhatsApp ordering</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">One tap. Order sent instantly.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(-0.7deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 03</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Lightning bolt icon for fast mobile speed</title><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Lightning-fast mobile speed</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">Loads in under 2 seconds.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(1deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 04</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Map pin icon for Google Maps location hook</title><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Google Maps &amp; location hook</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">One-tap directions to your door.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(-0.9deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 05</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Palette icon for custom brand dark aesthetics</title><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Custom dark aesthetics</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">Your brand. Never a template.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(0.7deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 06</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Instagram icon for social media sync</title><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Instagram sync</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">Reels and reviews, fully synced.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+      <div class="reveal sm:col-span-2 lg:col-span-1" style="transform:rotate(-1deg)">
+        <article class="tilt-card ticket-card p-7 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="mono text-[10px] tracking-widest accent-text">NO. 07</span>
+            <svg class="icon-glow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" role="img"><title>Receipt icon for zero commission on orders</title><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="serif text-lg font-semibold mb-2">Zero commission on orders</h3>
+          <p class="text-sm font-semibold" style="color:rgba(226,240,204,0.8)">Keep 100% of every order.</p>
+          <div class="mt-5 pt-4 mono text-[9px] uppercase tracking-widest opacity-35" style="border-top:1px dashed rgba(139,197,61,0.2)">Feature · Basegrid</div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing" aria-labelledby="pricing-heading" class="relative py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="eyebrow inline-flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-5">
+        <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        Simple, honest pricing
+        <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+      </div>
+      <h2 id="pricing-heading" class="headline-white serif font-semibold text-3xl md:text-[2.6rem] leading-tight">One build. One small monthly upkeep fee. Zero commission.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-14">
+
+      <div class="reveal" style="transform:rotate(-1deg)">
+        <article class="tilt-card ticket-card p-8 md:p-10 h-full">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <span class="mono text-[10px] tracking-widest accent-text uppercase">Package / 01</span>
+          <h3 class="serif text-2xl font-semibold mt-3">Starter Menu Package</h3>
+          <p class="mono text-sm font-semibold accent-text mt-1">Starting at Rs. 15,000</p>
+          <p class="mono text-[10px] mt-1 opacity-50">+ Rs. 1,500/mo hosting &amp; support</p>
+          <p class="text-sm mt-3" style="color:rgba(226,240,204,0.6)">For brands who need to go live, fast.</p>
+          <ul class="mt-8 space-y-4 text-sm">
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Quick 48-hour delivery</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Direct WhatsApp order routing</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Mobile-optimized digital menu</li>
+          </ul>
+          <button type="button" class="pkg-trigger tap btn-outline w-full flex items-center justify-center rounded-full px-6 py-3.5 mt-9 mono text-[11px] tracking-widest uppercase font-semibold" style="color:var(--mint)" data-pkg="starter" aria-haspopup="dialog" aria-expanded="false" aria-controls="packageModal">
+            Ask about Starter
+          </button>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(1deg)">
+        <article class="tilt-card p-8 md:p-10 h-full relative overflow-hidden rounded-xl" style="background:var(--accent); color:var(--bg); border:1px solid transparent;">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <span class="absolute top-7 right-7 mono text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:var(--bg); color:var(--accent);">Most popular</span>
+          <span class="mono text-[10px] tracking-widest uppercase" style="opacity:.6">Package / 02</span>
+          <h3 class="serif text-2xl font-semibold mt-3">Pro Restaurant Suite</h3>
+          <p class="mono text-sm font-semibold mt-1" style="color:var(--bg)">Starting at Rs. 35,000</p>
+          <p class="mono text-[10px] mt-1" style="color:rgba(1,18,7,0.65)">+ Rs. 1,500/mo hosting &amp; support</p>
+          <p class="text-sm mt-3 opacity-80">For brands ready to own their whole digital front door.</p>
+          <ul class="mt-8 space-y-4 text-sm font-medium">
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Full custom branding</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Table reservation engine</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Photo showcase &amp; gallery</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Local SEO setup</li>
+          </ul>
+          <button type="button" class="pkg-trigger tap w-full flex items-center justify-center rounded-full px-6 py-3.5 mt-9 mono text-[11px] tracking-widest uppercase font-semibold" style="background:var(--bg); color:var(--accent);" data-pkg="pro" aria-haspopup="dialog" aria-expanded="false" aria-controls="packageModal">
+            Ask about Pro Suite
+          </button>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS (3-column) ================= -->
+<section id="process" aria-labelledby="process-heading" class="relative py-24 md:py-32" style="background:linear-gradient(180deg, transparent, rgba(1,47,19,0.35), transparent);">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl reveal">
+      <div class="eyebrow inline-flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-5">
+        <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        How it works
+        <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+      </div>
+      <h2 id="process-heading" class="headline-white serif font-semibold text-3xl md:text-[2.6rem] leading-tight">From menu photos to live orders in three steps.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
+
+      <div class="reveal">
+        <article class="tilt-card ticket-card p-7 text-center h-full relative">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="step-tag w-12 h-12 rounded-full grid place-items-center mono text-sm font-semibold mx-auto mb-4" style="background:var(--bg);">01</div>
+          <h3 class="serif text-lg font-semibold">Send your menu</h3>
+          <p class="text-xs mt-2" style="color:rgba(226,240,204,0.62)">Photos and prices, on WhatsApp.</p>
+          <svg class="hidden md:block absolute top-1/2 -right-4 -translate-y-1/2 z-10" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </article>
+      </div>
+
+      <div class="reveal">
+        <article class="tilt-card ticket-card p-7 text-center h-full relative">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="step-tag w-12 h-12 rounded-full grid place-items-center mono text-sm font-semibold mx-auto mb-4" style="background:var(--bg);">02</div>
+          <h3 class="serif text-lg font-semibold">We build your preview</h3>
+          <p class="text-xs mt-2" style="color:rgba(226,240,204,0.62)">A live mobile link in 48 hours.</p>
+          <svg class="hidden md:block absolute top-1/2 -right-4 -translate-y-1/2 z-10" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </article>
+      </div>
+
+      <div class="reveal">
+        <article class="tilt-card p-7 text-center h-full rounded-xl relative overflow-hidden" style="background:var(--accent); border:1px solid transparent;">
+          <div class="ticket-notch"></div>
+          <div class="tilt-glare"></div>
+          <div class="w-12 h-12 rounded-full grid place-items-center mono text-sm font-semibold mx-auto mb-4" style="background:var(--bg); color:var(--accent);">03</div>
+          <h3 class="serif text-lg font-semibold" style="color:var(--bg)">Start taking orders</h3>
+          <p class="text-xs mt-2" style="color:rgba(1,18,7,0.7)">Direct, straight to your WhatsApp.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" aria-labelledby="faq-heading" class="relative py-24 md:py-28">
+  <div class="max-w-3xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="eyebrow inline-flex items-center gap-3 mono text-[11px] tracking-[0.25em] uppercase mb-5">
+        <svg viewBox="0 0 27 78" aria-hidden="true"><use href="#bracketIcon"/></svg>
+        Frequently asked
+        <svg viewBox="0 0 27 78" style="transform:scaleX(-1)" aria-hidden="true"><use href="#bracketIcon"/></svg>
+      </div>
+      <h2 id="faq-heading" class="headline-white serif font-semibold text-3xl md:text-[2.6rem] leading-tight">Answers before you message us.</h2>
+    </div>
+
+    <div class="mt-12 space-y-4">
+
+      <div class="reveal" style="transform:rotate(-0.6deg)">
+        <article class="faq-item ticket-card">
+          <div class="ticket-notch"></div>
+          <h3>
+            <button type="button" class="faq-trigger tap w-full flex items-center justify-between gap-4 text-left p-6" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
+              <span class="serif text-base md:text-lg font-semibold">How fast can our menu website go live?</span>
+              <svg class="faq-chevron shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+            <div class="overflow-hidden">
+              <p class="px-6 pb-6 text-sm" style="color:rgba(226,240,204,0.68)">Most restaurants get a working preview link within 48 hours of sending their menu and photos on WhatsApp. Once you approve it, we can take it live the same day.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(0.5deg)">
+        <article class="faq-item ticket-card">
+          <div class="ticket-notch"></div>
+          <h3>
+            <button type="button" class="faq-trigger tap w-full flex items-center justify-between gap-4 text-left p-6" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+              <span class="serif text-base md:text-lg font-semibold">Can we update our own menu items and prices later?</span>
+              <svg class="faq-chevron shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+            <div class="overflow-hidden">
+              <p class="px-6 pb-6 text-sm" style="color:rgba(226,240,204,0.68)">Yes. Send any menu or price changes to us on WhatsApp and we update the live site for you — no coding or logins required on your end.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(-0.4deg)">
+        <article class="faq-item ticket-card">
+          <div class="ticket-notch"></div>
+          <h3>
+            <button type="button" class="faq-trigger tap w-full flex items-center justify-between gap-4 text-left p-6" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+              <span class="serif text-base md:text-lg font-semibold">Who handles hosting and is there a monthly fee?</span>
+              <svg class="faq-chevron shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+            <div class="overflow-hidden">
+              <p class="px-6 pb-6 text-sm" style="color:rgba(226,240,204,0.68)">Basegrid handles all hosting as part of your build. There's a simple Rs. 1,500/month fee that covers hosting, domain maintenance, menu updates, and WhatsApp integration support — and we never take a commission from your orders.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(0.5deg)">
+        <article class="faq-item ticket-card">
+          <div class="ticket-notch"></div>
+          <h3>
+            <button type="button" class="faq-trigger tap w-full flex items-center justify-between gap-4 text-left p-6" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+              <span class="serif text-base md:text-lg font-semibold">How does WhatsApp ordering actually work?</span>
+              <svg class="faq-chevron shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+            <div class="overflow-hidden">
+              <p class="px-6 pb-6 text-sm" style="color:rgba(226,240,204,0.68)">Customers browse your digital menu, tap "Order on WhatsApp", and a pre-filled message with their order opens straight in their WhatsApp app, sent to your business number — no extra app or account needed.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="transform:rotate(-0.5deg)">
+        <article class="faq-item ticket-card">
+          <div class="ticket-notch"></div>
+          <h3>
+            <button type="button" class="faq-trigger tap w-full flex items-center justify-between gap-4 text-left p-6" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+              <span class="serif text-base md:text-lg font-semibold">Do we need our own domain name?</span>
+              <svg class="faq-chevron shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+            <div class="overflow-hidden">
+              <p class="px-6 pb-6 text-sm" style="color:rgba(226,240,204,0.68)">No — we can launch on a Basegrid subdomain right away, or connect your own domain if you already have one.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA + LEAD FORM ================= -->
+<section aria-labelledby="final-cta-heading" class="relative py-24 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div class="reveal text-center lg:text-left">
+        <h2 id="final-cta-heading" class="headline-white serif font-semibold text-3xl md:text-5xl leading-tight">
+          Your menu deserves better than a <span class="accent-text italic">printed PDF.</span>
+        </h2>
+        <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer"
+           class="tap magnetic btn-accent inline-flex items-center gap-2 rounded-full px-8 py-4 mono text-[12px] tracking-widest uppercase font-semibold mt-8">
+          Get Your Free 48-Hour Preview
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="mono text-[11px] uppercase tracking-widest opacity-45 mt-5">
+          or DM us on Instagram
+          <a href="https://www.instagram.com/basegrid.pk" target="_blank" rel="noopener noreferrer" class="accent-text">@basegrid.pk</a>
+        </p>
+      </div>
+
+      <div class="reveal">
+        <form id="callbackForm" class="ticket-card p-7 md:p-8" novalidate>
+          <div class="ticket-notch"></div>
+          <p class="mono text-[10px] tracking-widest uppercase accent-text">Prefer a call?</p>
+          <h3 class="serif text-xl font-semibold mt-2">We'll message you on WhatsApp instead</h3>
+          <div class="mt-6 space-y-4">
+            <div>
+              <label for="cbName" class="mono text-[10px] uppercase tracking-widest opacity-60">Restaurant Name</label>
+              <input id="cbName" name="cbName" type="text" required class="field-input w-full rounded-lg px-4 py-3 mt-1.5 text-sm" placeholder="Your restaurant name" />
+            </div>
+            <div>
+              <label for="cbPhone" class="mono text-[10px] uppercase tracking-widest opacity-60">WhatsApp / Phone Number</label>
+              <input id="cbPhone" name="cbPhone" type="tel" required class="field-input w-full rounded-lg px-4 py-3 mt-1.5 text-sm" placeholder="03XX XXXXXXX" />
+            </div>
+          </div>
+          <button type="submit" class="tap btn-accent w-full rounded-full py-3.5 mt-6 mono text-[11px] tracking-widest uppercase font-semibold">Get Callback</button>
+          <p class="mono text-[10px] mt-3 opacity-50 leading-relaxed">We'll open WhatsApp with your details filled in — just hit send.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative pt-0 pb-32 md:pb-16" style="border-top:1px solid rgba(139,197,61,0.2);">
+  <div class="tear-strip" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-14">
+    <div class="flex flex-col md:flex-row justify-between gap-10">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="favicon.jpg" alt="Basegrid logo" class="logo-mark" width="32" height="32" />
+          <p class="serif text-2xl font-bold">Basegrid</p>
+        </div>
+        <p class="text-sm mt-3" style="color:rgba(226,240,204,0.55)">Digital menus and websites for Pakistani food brands. Built to convert followers into orders.</p>
+        <a href="https://www.instagram.com/basegrid.pk" target="_blank" rel="noopener noreferrer" class="tap inline-flex items-center gap-2 mt-5 mono text-xs uppercase tracking-widest" style="color:var(--mint)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          @basegrid.pk
+        </a>
+      </div>
+
+      <div class="flex gap-16">
+        <div>
+          <p class="mono text-[10px] uppercase tracking-widest font-semibold mb-4" style="color:rgba(226,240,204,0.4)">Site</p>
+          <div class="flex flex-col gap-3 mono text-xs uppercase tracking-wide">
+            <a href="#work" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">Work</a>
+            <a href="#features" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">Features</a>
+            <a href="#pricing" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">Pricing</a>
+            <a href="#process" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">Process</a>
+          </div>
+        </div>
+        <div>
+          <p class="mono text-[10px] uppercase tracking-widest font-semibold mb-4" style="color:rgba(226,240,204,0.4)">Contact</p>
+          <div class="flex flex-col gap-3 mono text-xs">
+            <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20have%20a%20question" target="_blank" rel="noopener noreferrer" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">0334&nbsp;7383967</a>
+            <a href="https://www.instagram.com/basegrid.pk" target="_blank" rel="noopener noreferrer" class="tap flex items-center" style="color:rgba(226,240,204,0.75)">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 flex flex-col sm:flex-row justify-between gap-3 mono text-[11px]" style="border-top:1px dashed rgba(226,240,204,0.15); color:rgba(226,240,204,0.4)">
+      <p>© <span id="year"></span> Basegrid. All rights reserved.</p>
+      <p>Serving food brands across Pakistan</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant."
+   target="_blank" rel="noopener noreferrer"
+   class="float-wa hidden md:grid fixed bottom-8 right-8 z-50 w-16 h-16 place-items-center shadow-2xl rounded-full"
+   style="background:var(--accent); box-shadow:0 15px 35px -10px rgba(139,197,61,0.6);"
+   aria-label="Chat with Basegrid on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--bg)" aria-hidden="true"><path d="M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 003.83 1h.01a7.94 7.94 0 006.9-11.9 7.85 7.85 0 00-1.34-1.68zM12.05 18.4h-.01a6.57 6.57 0 01-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 01-1-3.5 6.6 6.6 0 1113.19-.06 6.58 6.58 0 01-6.59 6.65zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.14-.42.05-.2-.1-.83-.3-1.58-.97a5.9 5.9 0 01-1.1-1.36c-.11-.2 0-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.32.06-.13.03-.25-.02-.35-.05-.1-.44-1.05-.6-1.44-.16-.38-.32-.33-.44-.34h-.38c-.13 0-.35.05-.53.25-.18.2-.7.68-.7 1.66 0 .98.72 1.92.82 2.06.1.13 1.4 2.15 3.4 3.01.48.2.85.33 1.14.42.48.15.91.13 1.26.08.38-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.09-.18-.14-.38-.24z"/></svg>
+</a>
+
+<div class="fixed bottom-4 inset-x-4 z-50 md:hidden">
+  <a href="https://wa.me/923347383967?text=Hi%20Basegrid%2C%20I%20want%20to%20request%20a%20free%20demo%20for%20my%20restaurant."
+     target="_blank" rel="noopener noreferrer"
+     class="tap btn-accent w-full flex items-center justify-center gap-2 rounded-full py-4 mono text-[12px] tracking-widest uppercase font-semibold shadow-2xl">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 003.83 1h.01a7.94 7.94 0 006.9-11.9 7.85 7.85 0 00-1.34-1.68z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+  /* ---- mobile drawer ---- */
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  function openDrawer(){ mobileDrawer.classList.add('is-open'); drawerBackdrop.classList.add('is-open'); menuToggle.classList.add('is-open'); menuToggle.setAttribute('aria-expanded','true'); }
+  function closeDrawer(){ mobileDrawer.classList.remove('is-open'); drawerBackdrop.classList.remove('is-open'); menuToggle.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded','false'); }
+  menuToggle.addEventListener('click', () => mobileDrawer.classList.contains('is-open') ? closeDrawer() : openDrawer());
+  drawerBackdrop.addEventListener('click', closeDrawer);
+  document.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click', closeDrawer));
+
+  /* ---- package confirmation modal ---- */
+  const packageInfo = {
+    starter: { name: 'Starter Menu Package', desc: 'Rs. 15,000 to start, + Rs. 1,500/mo hosting & support.', msg: "Hi Basegrid, I'm interested in the Starter Menu Package" },
+    pro: { name: 'Pro Restaurant Suite', desc: 'Rs. 35,000 to start, + Rs. 1,500/mo hosting & support.', msg: "Hi Basegrid, I'm interested in the Pro Restaurant Suite" }
+  };
+  const packageModal = document.getElementById('packageModal');
+  function openPackageModal(key){
+    const info = packageInfo[key];
+    if (!info) return;
+    document.getElementById('packageModalName').textContent = info.name;
+    document.getElementById('packageModalDesc').textContent = info.desc;
+    document.getElementById('packageModalCta').href = `https://wa.me/923347383967?text=${encodeURIComponent(info.msg)}`;
+    packageModal.classList.add('is-open');
+    document.querySelectorAll('.pkg-trigger').forEach(b => b.setAttribute('aria-expanded', b.dataset.pkg === key ? 'true' : 'false'));
+    document.getElementById('packageModalClose').focus();
+  }
+  function closePackageModal(){
+    packageModal.classList.remove('is-open');
+    document.querySelectorAll('.pkg-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+  }
+  document.querySelectorAll('.pkg-trigger').forEach(btn => btn.addEventListener('click', () => openPackageModal(btn.dataset.pkg)));
+  packageModal.addEventListener('click', (e) => { if (e.target === packageModal) closePackageModal(); });
+  document.getElementById('packageModalClose').addEventListener('click', closePackageModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (packageModal.classList.contains('is-open')) closePackageModal();
+    else closeDrawer();
+  });
+
+  /* ---- nav depth + scroll progress bar ---- */
+  const nav = document.getElementById('siteNav');
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  let navTicking = false;
+  function updateNavAndProgress(){
+    const scrollTop = window.scrollY;
+    nav.classList.toggle('scrolled', scrollTop > 20);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    navTicking = false;
+  }
+  window.addEventListener('scroll', () => { if (!navTicking) { requestAnimationFrame(updateNavAndProgress); navTicking = true; } }, { passive: true });
+  updateNavAndProgress();
+
+  /* ---- reveal-on-scroll with fallback ---- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  window.addEventListener('load', () => {
+    setTimeout(() => { document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible')); }, 2500);
+  });
+
+  /* ---- count-up stats when the receipt card scrolls into view ---- */
+  function animateCountUp(el, end, duration, suffix, decimals){
+    const startTime = performance.now();
+    function tick(now){
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = (end * eased).toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statBlock = document.getElementById('statBlock');
+  if (statBlock) {
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const deliveryEl = document.getElementById('statDelivery');
+        const loadEl = document.getElementById('statLoad');
+        if (reducedMotion) { deliveryEl.textContent = '48H'; loadEl.textContent = '2.1S'; }
+        else { animateCountUp(deliveryEl, 48, 1100, 'H', 0); animateCountUp(loadEl, 2.1, 1100, 'S', 1); }
+        statObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    statObserver.observe(statBlock);
+  }
+
+  /* ---- magnetic hover-lean for primary CTAs ---- */
+  function attachMagnetic(el, strength = 0.22, max = 7){
+    let raf = null, lastEvent = null;
+    function apply(){
+      const e = lastEvent;
+      const rect = el.getBoundingClientRect();
+      const relX = e.clientX - (rect.left + rect.width / 2);
+      const relY = e.clientY - (rect.top + rect.height / 2);
+      const tx = clamp(relX * strength, -max, max);
+      const ty = clamp(relY * strength, -max, max) - 2;
+      el.style.transform = `translate(${tx}px, ${ty}px)`;
+      raf = null;
+    }
+    el.addEventListener('mousemove', (e) => { lastEvent = e; if (!raf) raf = requestAnimationFrame(apply); });
+    el.addEventListener('mouseleave', () => { if (raf) { cancelAnimationFrame(raf); raf = null; } el.style.transform = 'translate(0,0)'; });
+  }
+  document.querySelectorAll('.magnetic').forEach(el => attachMagnetic(el));
+
+  /* ---- hero carousel ---- */
+  const heroTrack = document.getElementById('heroTrack');
+  const heroDots = document.querySelectorAll('.hero-dot-hit');
+  const heroSlideCount = heroDots.length;
+  let heroIndex = 0, heroTimer = null;
+  function goToHeroSlide(i){
+    heroIndex = (i + heroSlideCount) % heroSlideCount;
+    heroTrack.style.transform = `translateX(-${heroIndex * (100 / heroSlideCount)}%)`;
+    heroDots.forEach((d, idx) => d.querySelector('.hero-dot').classList.toggle('active', idx === heroIndex));
+  }
+  function stopHeroAutoplay(){ if (heroTimer) clearInterval(heroTimer); heroTimer = null; }
+  function startHeroAutoplay(){ if (reducedMotion) return; stopHeroAutoplay(); heroTimer = setInterval(() => goToHeroSlide(heroIndex + 1), 4000); }
+  heroDots.forEach(dot => dot.addEventListener('click', () => { goToHeroSlide(parseInt(dot.dataset.i, 10)); startHeroAutoplay(); }));
+  const heroMedia = document.querySelector('.hero-media');
+  let touchStartX = 0, touchStartY = 0;
+  heroMedia.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; stopHeroAutoplay(); }, { passive: true });
+  heroMedia.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX, dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) goToHeroSlide(heroIndex + (dx < 0 ? 1 : -1));
+    startHeroAutoplay();
+  }, { passive: true });
+  goToHeroSlide(0);
+  startHeroAutoplay();
+
+  /* ---- hero interactive cart-drawer demo ---- */
+  const heroCartData = { 'Chicken Tikka Skewers': 850, 'Loaded Fries': 650, 'Mango Lassi': 400 };
+  const heroCart = {};
+  function fmtRs(n){ return 'Rs. ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function renderHeroCart(){
+    const entries = Object.entries(heroCart).filter(([,q]) => q > 0);
+    const count = entries.reduce((s,[,q]) => s+q, 0);
+    const total = entries.reduce((s,[name,q]) => s + heroCartData[name]*q, 0);
+    document.getElementById('heroCartCount').textContent = count;
+    document.getElementById('heroCartTotal').textContent = fmtRs(total);
+    const checkoutBtn = document.getElementById('heroCartCheckout');
+    if (count > 0) {
+      const lines = entries.map(([name,q]) => `${q}x ${name}`).join(', ');
+      const msg = `Hi Basegrid, testing the demo cart — I'd like: ${lines} (${fmtRs(total)})`;
+      checkoutBtn.href = `https://wa.me/923347383967?text=${encodeURIComponent(msg)}`;
+    } else {
+      checkoutBtn.href = 'https://wa.me/923347383967?text=' + encodeURIComponent('Hi Basegrid, I want to request a free demo for my restaurant.');
+    }
+  }
+  document.querySelectorAll('.hero-cart-add').forEach(btn => {
+    btn.addEventListener('click', () => { heroCart[btn.dataset.item] = (heroCart[btn.dataset.item] || 0) + 1; renderHeroCart(); });
+  });
+  renderHeroCart();
+
+  /* ---- scroll-driven letter + icon animation (rAF-throttled) ---- */
+  const text = "SEE YOUR MENU COME ALIVE";
+  const lettersWrap = document.getElementById('lettersWrap');
+  const centerIndex = Math.floor(text.length / 2);
+  text.split('').forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'letter';
+    span.textContent = ch === ' ' ? '\u00A0' : ch;
+    span.dataset.distance = i - centerIndex;
+    lettersWrap.appendChild(span);
+  });
+  const iconPaths = [
+    '<path d="M11 17a6 6 0 100-12 6 6 0 000 12z"/><path d="M21 21l-4.35-4.35"/>',
+    '<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>',
+    '<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>',
+    '<path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>',
+    '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/>',
+    '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+    '<path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>'
+  ];
+  const iconsWrap = document.getElementById('iconsWrap');
+  const iconCenter = Math.floor(iconPaths.length / 2);
+  iconPaths.forEach((p, i) => {
+    const span = document.createElement('span');
+    span.className = 'icon-char';
+    span.dataset.distance = i - iconCenter;
+    span.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" aria-hidden="true">${p}</svg>`;
+    iconsWrap.appendChild(span);
+  });
+  const letterEls = lettersWrap.querySelectorAll('.letter');
+  const iconEls = iconsWrap.querySelectorAll('.icon-char');
+  const scrollSub = document.getElementById('scrollSub');
+  const scrollSection = document.getElementById('scrollAnim');
+  function updateScrollAnim(){
+    const rect = scrollSection.getBoundingClientRect();
+    const total = rect.height - window.innerHeight;
+    const p = clamp(-rect.top / total, 0, 1);
+    letterEls.forEach(el => {
+      const d = parseFloat(el.dataset.distance);
+      const x = (1 - p) * d * 20, rotateX = (1 - p) * d * 16, z = -(1 - p) * Math.abs(d) * 24;
+      el.style.transform = `perspective(700px) translateX(${x}px) translateZ(${z}px) rotateX(${rotateX}deg)`;
+      el.style.opacity = 0.25 + p * 0.75;
+    });
+    iconEls.forEach(el => {
+      const d = parseFloat(el.dataset.distance);
+      const x = (1 - p) * d * 28, y = (1 - p) * Math.abs(d) * 18, z = -(1 - p) * Math.abs(d) * 32, scale = 0.72 + p * 0.28;
+      el.style.transform = `perspective(700px) translate(${x}px, ${y}px) translateZ(${z}px) scale(${scale})`;
+      el.style.opacity = 0.2 + p * 0.8;
+    });
+    scrollSub.style.opacity = p > 0.7 ? 1 : 0;
+  }
+  let scrollAnimTicking = false;
+  window.addEventListener('scroll', () => { if (!scrollAnimTicking) { requestAnimationFrame(() => { updateScrollAnim(); scrollAnimTicking = false; }); scrollAnimTicking = true; } }, { passive: true });
+  window.addEventListener('resize', updateScrollAnim);
+  updateScrollAnim();
+
+  /* ---- ambient hero spotlight ---- */
+  const heroSection = document.getElementById('top');
+  const heroSpot = document.getElementById('heroSpot');
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    heroSpot.style.background = `radial-gradient(650px circle at ${x}px ${y}px, rgba(139,197,61,0.16), transparent 70%)`;
+  });
+
+  /* ---- reusable pointer tilt, rAF-throttled ---- */
+  function attachTilt(el, max = 8, scale = 1.02){
+    const glare = el.querySelector('.tilt-glare');
+    let raf = null, lastEvent = null;
+    function apply(){
+      const e = lastEvent;
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width, y = (e.clientY - rect.top) / rect.height;
+      const rotateY = (x - 0.5) * max * 2, rotateX = (0.5 - y) * max * 2;
+      el.style.transform = `perspective(800px) translateY(-5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+      if (glare) glare.style.background = `radial-gradient(circle at ${x*100}% ${y*100}%, rgba(226,240,204,0.16), transparent 60%)`;
+      raf = null;
+    }
+    el.addEventListener('mousemove', (e) => { lastEvent = e; if (!raf) raf = requestAnimationFrame(apply); });
+    el.addEventListener('mouseleave', () => {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      el.style.transform = 'perspective(800px) translateY(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+      if (glare) glare.style.background = 'transparent';
+    });
+  }
+  document.querySelectorAll('.tilt-card').forEach(el => attachTilt(el));
+
+  /* ---- phone mockup group tilt, rAF-throttled ---- */
+  const phoneTiltGroup = document.getElementById('phoneTiltGroup');
+  const phoneWrap = phoneTiltGroup.parentElement;
+  let phoneRaf = null, phoneLastEvent = null;
+  function applyPhoneTilt(){
+    const e = phoneLastEvent;
+    const rect = phoneWrap.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width, y = (e.clientY - rect.top) / rect.height;
+    const rotateY = -6 + (x - 0.5) * 16, rotateX = 3 - (y - 0.5) * 12;
+    phoneTiltGroup.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+    phoneRaf = null;
+  }
+  phoneWrap.addEventListener('mousemove', (e) => { phoneLastEvent = e; if (!phoneRaf) phoneRaf = requestAnimationFrame(applyPhoneTilt); });
+  phoneWrap.addEventListener('mouseleave', () => {
+    if (phoneRaf) { cancelAnimationFrame(phoneRaf); phoneRaf = null; }
+    phoneTiltGroup.style.transform = 'perspective(1000px) rotateY(-6deg) rotateX(3deg)';
+  });
+
+  /* ---- phone mockup: tab switching ---- */
+  const menuData = {
+    starters: [ { name: 'Loaded Fries', price: 'Rs. 650' }, { name: 'Chicken Tikka Skewers', price: 'Rs. 850' }, { name: 'Cheese Nachos', price: 'Rs. 700' } ],
+    mains: [ { name: 'Special Chicken Karahi', price: 'Rs. 2,100' }, { name: 'Grilled Malai Boti Platter', price: 'Rs. 1,450' }, { name: 'Peshawari Chapli Kebab', price: 'Rs. 1,100' } ],
+    drinks: [ { name: 'Fresh Lime Mint', price: 'Rs. 350' }, { name: 'Kashmiri Chai', price: 'Rs. 300' }, { name: 'Mango Lassi', price: 'Rs. 400' } ]
+  };
+  const tabBtns = document.querySelectorAll('#menuTabs .tab-btn');
+  const menuList = document.getElementById('menuList');
+  function renderMenu(tab){
+    menuList.innerHTML = menuData[tab].map(item => `
+      <div class="menu-item flex items-center justify-between py-3">
+        <span class="text-sm">${item.name}</span>
+        <span class="mono text-sm font-semibold accent-text">${item.price}</span>
+      </div>
+    `).join('');
+  }
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.style.color = 'var(--mint)'; });
+      btn.classList.add('active'); btn.style.color = '';
+      renderMenu(btn.dataset.tab);
+    });
+  });
+  renderMenu('starters');
+  document.getElementById('waOrderBtn').addEventListener('click', () => {
+    const msg = 'Hi Basegrid, I tried the live demo and want this for my restaurant';
+    window.open(`https://wa.me/923347383967?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+  });
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(openItem => {
+        if (openItem !== item) { openItem.classList.remove('is-open'); openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); }
+      });
+      item.classList.toggle('is-open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  /* ---- callback form: static file, no backend — hands off to WhatsApp with details pre-filled ---- */
+  document.getElementById('callbackForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('cbName').value.trim();
+    const phone = document.getElementById('cbPhone').value.trim();
+    if (!name || !phone) return;
+    const textMsg = `Hi Basegrid, please call me back.\nRestaurant: ${name}\nMy number: ${phone}`;
+    window.open(`https://wa.me/923347383967?text=${encodeURIComponent(textMsg)}`, '_blank', 'noopener,noreferrer');
+  });
+</script>
+
+</body>
+</html>
