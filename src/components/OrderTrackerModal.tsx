@@ -18,10 +18,10 @@ import {
   ShieldCheck,
   AlertCircle
 } from 'lucide-react';
-import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
-import { CartItem } from './CartDrawer.tsx';
-import { PostOrderFeedbackForm, CustomerFeedback } from './PostOrderFeedbackForm.tsx';
-import { LottieProgressMilestoneBar } from './LottieProgressMilestoneBar.tsx';
+import { RESTAURANT_CONFIG } from '../restaurant.config';
+import { CartItem } from './CartDrawer';
+import { PostOrderFeedbackForm, CustomerFeedback } from './PostOrderFeedbackForm';
+import { LottieProgressMilestoneBar } from './LottieProgressMilestoneBar';
 
 export type OrderStatus = 'Order Placed' | 'Preparing' | 'Out for Delivery' | 'Delivered';
 

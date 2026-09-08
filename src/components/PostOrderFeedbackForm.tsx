@@ -17,7 +17,7 @@ import {
   Smile,
   Check
 } from 'lucide-react';
-import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
+import { RESTAURANT_CONFIG } from '../restaurant.config';
 
 export interface CustomerFeedback {
   orderId: string;

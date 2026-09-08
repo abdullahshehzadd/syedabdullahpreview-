@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
-import { CartItem } from './CartDrawer.tsx';
+import { CartItem } from './CartDrawer';
 
 interface FloatingCartBarProps {
   items: CartItem[];

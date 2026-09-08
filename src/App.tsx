@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { useReveal } from './hooks/useReveal.ts';
-import { RESTAURANT_CONFIG, MenuItem, SignatureDeal, MENU_ITEMS } from './restaurant.config.ts';
-import { Header } from './components/Header.tsx';
-import { Skiper19 } from './components/Skiper19.tsx';
-import { Skiper19ScrollHero } from './components/Skiper19ScrollHero.tsx';
-import { HeroSection } from './components/HeroSection.tsx';
-import { StickyScrollCards } from './components/StickyScrollCards.tsx';
-import { MenuSection } from './components/MenuSection.tsx';
-import { GoogleReviewsSection } from './components/GoogleReviewsSection.tsx';
-import { SocialProofWorkflow } from './components/SocialProofWorkflow.tsx';
-import { Footer } from './components/Footer.tsx';
-import { CartDrawer, CartItem } from './components/CartDrawer.tsx';
-import { FloatingCartBar } from './components/FloatingCartBar.tsx';
-import { ExpandableFoodModal } from './components/ExpandableFoodModal.tsx';
-import { DirectionsHoursModal } from './components/DirectionsHoursModal.tsx';
-import { OrderTrackerModal, TrackedOrder, OrderStatus } from './components/OrderTrackerModal.tsx';
-import { Skiper89ScrollBadge } from './components/Skiper89ScrollBadge.tsx';
+import { RESTAURANT_CONFIG, MenuItem, SignatureDeal, MENU_ITEMS } from './restaurant.config';
+import { Header } from './components/Header';
+import { Skiper19 } from './components/Skiper19';
+import { Skiper19ScrollHero } from './components/Skiper19ScrollHero';
+import { HeroSection } from './components/HeroSection';
+import { StickyScrollCards } from './components/StickyScrollCards';
+import { MenuSection } from './components/MenuSection';
+import { GoogleReviewsSection } from './components/GoogleReviewsSection';
+import { SocialProofWorkflow } from './components/SocialProofWorkflow';
+import { Footer } from './components/Footer';
+import { CartDrawer, CartItem } from './components/CartDrawer';
+import { FloatingCartBar } from './components/FloatingCartBar';
+import { ExpandableFoodModal } from './components/ExpandableFoodModal';
+import { DirectionsHoursModal } from './components/DirectionsHoursModal';
+import { OrderTrackerModal, TrackedOrder, OrderStatus } from './components/OrderTrackerModal';
+import { Skiper89ScrollBadge } from './components/Skiper89ScrollBadge';
 import { CheckCircle } from 'lucide-react';
 
 export default function App() {
-  useReveal();
   const [serviceMode, setServiceMode] = useState<'delivery' | 'takeaway'>('delivery');
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {

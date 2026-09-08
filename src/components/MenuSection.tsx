@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Flame, Star, ShoppingBag, Check, Search, Sparkles, Heart } from 'lucide-react';
-import { MENU_CATEGORIES, MenuItem, MENU_ITEMS } from '../restaurant.config.ts';
+import { MENU_CATEGORIES, MenuItem, MENU_ITEMS } from '../restaurant.config';
 
 interface MenuSectionProps {
   selectedCategory: string;
@@ -43,6 +43,21 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
     return item.category === selectedCategory;
   });
 
+  // Anime.js Stagger effect when category changes
+  useEffect(() => {
+    if (cardsGridRef.current && typeof window !== 'undefined' && window.anime) {
+      window.anime({
+        targets: cardsGridRef.current.children,
+        opacity: [0, 1],
+        translateY: [18, 0],
+        scale: [0.97, 1],
+        delay: window.anime.stagger(45),
+        duration: 350,
+        easing: 'easeOutQuad'
+      });
+    }
+  }, [selectedCategory, searchQuery]);
+
   const handleImageLoaded = (id: string) => {
     setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
@@ -58,7 +73,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
   ];
 
   return (
-    <section id="menu-section" data-reveal className="py-6 md:py-10 scroll-mt-20 sm:scroll-mt-24">
+    <section id="menu-section" className="py-6 md:py-10 scroll-mt-20 sm:scroll-mt-24">
       {/* Category Navigation Pills Bar */}
       <div className="sticky top-[105px] sm:top-[115px] z-30 bg-[#011207]/95 backdrop-blur-md py-3 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-[#012F13]">
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
@@ -153,7 +168,6 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
       ) : (
         <div
           ref={cardsGridRef}
-          data-reveal-stagger
           className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
         >
           {filteredItems.map((item) => {

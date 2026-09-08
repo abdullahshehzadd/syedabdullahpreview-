@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Check, Flame, Bike, PackageCheck, HeartHandshake } from 'lucide-react';
-import { OrderStatus } from './OrderTrackerModal.tsx';
+import { OrderStatus } from './OrderTrackerModal';
 
 interface MilestoneStep {
   id: OrderStatus;

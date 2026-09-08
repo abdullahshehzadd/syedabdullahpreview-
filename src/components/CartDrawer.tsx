@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Trash2, Plus, Minus, ShoppingBag, Send, AlertCircle, Sparkles, MapPin, Phone, User, FileText, CheckCircle2 } from 'lucide-react';
-import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
+import { RESTAURANT_CONFIG } from '../restaurant.config';
 
 export interface CartItem {
   id: string; // Unique cart item ID (combines item ID + options)

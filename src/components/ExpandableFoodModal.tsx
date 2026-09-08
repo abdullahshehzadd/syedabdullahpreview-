@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Plus, Minus, Check, Flame, Star, Sparkles, ShoppingBag, Heart } from 'lucide-react';
-import { MenuItem } from '../restaurant.config.ts';
+import { MenuItem } from '../restaurant.config';
 
 interface ExpandableFoodModalProps {
   item: MenuItem | null;

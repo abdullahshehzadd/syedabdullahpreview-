@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Clock, MapPin, Phone, ExternalLink, ShieldCheck } from 'lucide-react';
-import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
+import { RESTAURANT_CONFIG } from '../restaurant.config';
 
 interface DirectionsHoursModalProps {
   isOpen: boolean;

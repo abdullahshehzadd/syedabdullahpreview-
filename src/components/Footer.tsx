@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, MapPin, Instagram, Facebook, Clock, Sparkles } from 'lucide-react';
-import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
+import { RESTAURANT_CONFIG } from '../restaurant.config';
 
 interface FooterProps {
   onOpenHoursModal: () => void;
@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu }) => {
   return (
-    <footer id="main-footer" data-reveal className="bg-[#012F13] border-t border-[#8BC53D]/20 mt-16 pt-12 pb-8">
+    <footer id="main-footer" className="bg-[#012F13] border-t border-[#8BC53D]/20 mt-16 pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#8BC53D]/15">
           {/* Col 1: Brand */}

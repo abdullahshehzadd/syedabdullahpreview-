@@ -34,7 +34,7 @@ export const SocialProofWorkflow: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" data-reveal className="py-8 md:py-12">
+    <section id="how-it-works" className="py-8 md:py-12">
       <div className="bg-[#012F13] rounded-3xl p-6 sm:p-10 border border-[#8BC53D]/30">
         <div className="text-center max-w-xl mx-auto mb-8">
           <span className="text-[11px] font-black uppercase tracking-wider text-[#8BC53D] block mb-1 font-mono">
@@ -48,7 +48,7 @@ export const SocialProofWorkflow: React.FC = () => {
           </p>
         </div>
 
-        <div data-reveal-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
