@@ -128,7 +128,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight text-[#1F3A4B] uppercase font-anton">
-            Pure Flavor <span className="text-[#8BC53D] italic">In Every Scroll</span>
+            Pure Flavor <span className="text-[#8BC53D]">In Every Scroll</span>
           </h2>
 
           <p className="text-[11px] sm:text-sm font-semibold text-[#1F3A4B]/80 max-w-md mt-0.5">
@@ -195,7 +195,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                   {SHOWCASE_DISHES[0].price}
                 </span>
               </div>
-              <h3 className="text-xs sm:text-sm font-black uppercase text-white truncate">
+              <h3 className="text-xs sm:text-base uppercase text-white truncate font-anton">
                 {SHOWCASE_DISHES[0].dish.name}
               </h3>
               <p className="text-[10px] sm:text-[11px] text-[#FAFDEE]/70 truncate sm:line-clamp-1">
@@ -255,7 +255,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                   {SHOWCASE_DISHES[1].price}
                 </span>
               </div>
-              <h3 className="text-xs sm:text-sm font-black uppercase text-white truncate">
+              <h3 className="text-xs sm:text-base uppercase text-white truncate font-anton">
                 {SHOWCASE_DISHES[1].dish.name}
               </h3>
               <p className="text-[10px] sm:text-[11px] text-[#FAFDEE]/70 truncate sm:line-clamp-1">
@@ -315,7 +315,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                   {SHOWCASE_DISHES[2].price}
                 </span>
               </div>
-              <h3 className="text-xs sm:text-sm font-black uppercase text-white truncate">
+              <h3 className="text-xs sm:text-base uppercase text-white truncate font-anton">
                 {SHOWCASE_DISHES[2].dish.name}
               </h3>
               <p className="text-[10px] sm:text-[11px] text-[#FAFDEE]/70 truncate sm:line-clamp-1">

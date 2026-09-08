@@ -506,7 +506,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* 2. Main High-Contrast Headline */}
         <div className="hero-fade-in mb-3 sm:mb-5">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white lowercase italic tracking-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.95)] leading-none select-text font-anton">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white lowercase tracking-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.95)] leading-none select-text font-anton">
             smash & <span className="text-[#8BC53D] drop-shadow-[0_0_40px_rgba(139,197,61,0.65)]">woodfire</span>
           </h1>
         </div>
@@ -558,7 +558,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Primary CTA: Explore Menu */}
           <button
             onClick={onScrollToMenu}
-            className="group px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#8BC53D] hover:bg-[#9de045] text-[#011207] font-black text-sm sm:text-base tracking-wide flex items-center gap-2.5 transition-all duration-300 shadow-[0_10px_25px_rgba(139,197,61,0.4)] active:scale-95 cursor-pointer"
+            className="group px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#8BC53D] hover:bg-[#9de045] text-[#011207] text-sm sm:text-base tracking-wide uppercase flex items-center gap-2.5 transition-all duration-300 shadow-[0_10px_25px_rgba(139,197,61,0.4)] active:scale-95 cursor-pointer font-anton"
           >
             <Utensils className="w-4 h-4 text-[#011207]" />
             <span>Explore Menu</span>
@@ -569,7 +569,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {onSelectFeaturedItem && (
             <button
               onClick={onSelectFeaturedItem}
-              className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#012F13]/90 hover:bg-[#012F13] text-white hover:text-[#8BC53D] border border-[#8BC53D]/40 hover:border-[#8BC53D] font-bold text-sm sm:text-base tracking-wide flex items-center gap-2 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] backdrop-blur-md active:scale-95 cursor-pointer"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#012F13]/90 hover:bg-[#012F13] text-white hover:text-[#8BC53D] border border-[#8BC53D]/40 hover:border-[#8BC53D] text-sm sm:text-base tracking-wide uppercase flex items-center gap-2 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] backdrop-blur-md active:scale-95 cursor-pointer font-anton"
             >
               <Sparkles className="w-4 h-4 text-[#8BC53D]" />
               <span>Chef's Specials</span>
@@ -580,7 +580,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {onOpenHoursModal && (
             <button
               onClick={onOpenHoursModal}
-              className="px-4 py-2 rounded-full bg-[#011207]/80 hover:bg-[#012F13] text-[#8BC53D] text-xs font-medium border border-[#8BC53D]/25 transition-all cursor-pointer flex items-center gap-1.5 hover:border-[#8BC53D]/50"
+              className="px-4 py-2 rounded-full bg-[#011207]/80 hover:bg-[#012F13] text-[#8BC53D] text-xs border border-[#8BC53D]/25 transition-all cursor-pointer flex items-center gap-1.5 hover:border-[#8BC53D]/50 font-anton uppercase"
             >
               <Clock className="w-3.5 h-3.5" />
               <span>Hours & Location</span>
@@ -592,7 +592,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="hero-fade-in flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6 text-xs text-[#E2F0CC]/80">
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8BC53D]" />
-            <span>25–35 Min Delivery</span>
+            <span className="font-anton uppercase tracking-wider">25–35 Min Delivery</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Star className="w-3.5 h-3.5 fill-[#8BC53D] text-[#8BC53D]" />

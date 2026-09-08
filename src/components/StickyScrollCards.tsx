@@ -29,7 +29,7 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
             <Sparkles className="w-3.5 h-3.5" />
             <span>Curated Chef Boxes</span>
           </div>
-          <h2 className="text-3xl md:text-4xl tracking-tight text-white uppercase italic font-anton">
+          <h2 className="text-3xl md:text-4xl tracking-tight text-white uppercase font-anton">
             Signature Deals <span className="text-[#8BC53D]">& Combos</span>
           </h2>
           <p className="text-[#E2F0CC]/70 text-sm md:text-base mt-1 max-w-xl">
@@ -138,7 +138,7 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
                 <div>
                   <h3 
                     onClick={() => onSelectDeal(deal)}
-                    className="text-xl md:text-2xl font-black text-white group-hover:text-[#8BC53D] transition-colors cursor-pointer"
+                    className="text-xl md:text-2xl text-white group-hover:text-[#8BC53D] transition-colors cursor-pointer font-anton uppercase"
                   >
                     {deal.title}
                   </h3>

@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <a href="#" className="block">
-              <h1 className="text-base sm:text-lg font-extrabold text-white tracking-tight leading-tight uppercase">
+              <h1 className="text-base sm:text-lg text-white tracking-tight leading-tight uppercase font-anton">
                 {RESTAURANT_CONFIG.name}
               </h1>
             </a>
@@ -166,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex bg-[#012F13] rounded-full p-1 border border-[#8BC53D]/20 select-none">
             <button
               onClick={() => onToggleServiceMode('delivery')}
-              className={`px-3 sm:px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3 sm:px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer font-anton ${
                 serviceMode === 'delivery'
                   ? 'bg-[#8BC53D] text-[#011207] shadow-[0_0_10px_rgba(139,197,61,0.3)]'
                   : 'text-[#E2F0CC]/60 hover:text-white'
@@ -176,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={() => onToggleServiceMode('takeaway')}
-              className={`px-3 sm:px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3 sm:px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer font-anton ${
                 serviceMode === 'takeaway'
                   ? 'bg-[#E2F0CC] text-[#011207] shadow-[0_0_10px_rgba(226,240,204,0.3)]'
                   : 'text-[#E2F0CC]/60 hover:text-white'

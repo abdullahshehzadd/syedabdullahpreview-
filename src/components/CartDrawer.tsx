@@ -170,7 +170,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                     <ShoppingBag className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl text-white uppercase tracking-tight font-anton">
+                    <h3 className="text-xl sm:text-2xl md:text-4xl text-white uppercase tracking-tight font-anton">
                       Your Food Order
                     </h3>
                     <span className="text-[11px] text-[#E2F0CC]/60">
@@ -208,7 +208,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                 <div className="flex bg-[#011207] rounded-full p-1 border border-[#8BC53D]/20">
                   <button
                     onClick={() => onToggleServiceMode('delivery')}
-                    className={`px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer font-anton ${
                       serviceMode === 'delivery'
                         ? 'bg-[#8BC53D] text-[#011207] shadow-[0_0_8px_rgba(139,197,61,0.3)]'
                         : 'text-[#E2F0CC]/50 hover:text-white'
@@ -218,7 +218,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                   </button>
                   <button
                     onClick={() => onToggleServiceMode('takeaway')}
-                    className={`px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer font-anton ${
                       serviceMode === 'takeaway'
                         ? 'bg-[#E2F0CC] text-[#011207] shadow-[0_0_8px_rgba(226,240,204,0.3)]'
                         : 'text-[#E2F0CC]/50 hover:text-white'

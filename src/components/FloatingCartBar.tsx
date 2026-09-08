@@ -52,7 +52,7 @@ export const FloatingCartBar: React.FC<FloatingCartBarProps> = ({
           </div>
 
           {/* Action CTA */}
-          <div className="flex items-center gap-2 bg-[#8BC53D] text-[#011207] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider group-hover:brightness-110 shadow-md shadow-[#8BC53D]/25 transition-all">
+          <div className="flex items-center gap-2 bg-[#8BC53D] text-[#011207] px-4 py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider group-hover:brightness-110 shadow-md shadow-[#8BC53D]/25 transition-all font-anton">
             <span>Review Order</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </div>

@@ -84,7 +84,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               <button
                 key={cat.id}
                 onClick={() => onSelectCategory(cat.id)}
-                className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 font-anton ${
                   isActive
                     ? isFavCat
                       ? 'bg-red-500 text-white shadow-[0_0_14px_rgba(239,68,68,0.45)] scale-102 font-black'
@@ -251,7 +251,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                     <div className="flex items-start justify-between gap-2">
                       <h4
                         onClick={() => onSelectFoodItem(item)}
-                        className="text-base sm:text-lg font-bold text-white group-hover:text-[#8BC53D] transition-colors line-clamp-1 cursor-pointer"
+                        className="text-base sm:text-lg text-white group-hover:text-[#8BC53D] transition-colors line-clamp-1 cursor-pointer font-anton uppercase"
                       >
                         {item.name}
                       </h4>

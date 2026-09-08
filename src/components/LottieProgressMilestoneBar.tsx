@@ -97,7 +97,7 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs sm:text-sm font-black text-white uppercase tracking-tight">
+              <span className="text-sm sm:text-xl text-white uppercase tracking-tight font-anton">
                 {activeMilestone.title}
               </span>
               <span

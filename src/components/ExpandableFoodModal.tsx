@@ -155,7 +155,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
             {/* Title & Price Header */}
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-black text-white tracking-tight uppercase">
+                <h3 className="text-2xl sm:text-3xl text-white tracking-tight uppercase font-anton">
                   {item.name}
                 </h3>
                 <p className="text-[#E2F0CC]/70 text-sm mt-1.5 leading-relaxed">

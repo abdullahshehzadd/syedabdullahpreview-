@@ -164,7 +164,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
         </div>
 
         <div className="space-y-1">
-          <h4 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
+          <h4 className="text-lg sm:text-2xl text-white uppercase tracking-tight font-anton">
             Thank You for Your Feedback!
           </h4>
           <p className="text-xs sm:text-sm text-[#E2F0CC]/80 max-w-md mx-auto">
@@ -230,7 +230,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-tight">
+              <h4 className="text-base sm:text-2xl text-white uppercase tracking-tight font-anton">
                 Rate Your Meal & Service
               </h4>
               <span className="px-2 py-0.5 rounded-full bg-[#8BC53D]/20 text-[#8BC53D] text-[10px] font-bold">

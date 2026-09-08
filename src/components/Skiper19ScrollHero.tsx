@@ -168,7 +168,7 @@ export const Skiper19ScrollHero: React.FC<Skiper19ScrollHeroProps> = ({
               <Sparkles className="w-3.5 h-3.5" />
               <span>Chef's Signature Recipes</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl tracking-tight text-white uppercase italic font-anton">
+            <h2 className="text-3xl sm:text-4xl tracking-tight text-white uppercase font-anton">
               Master Craft <span className="text-[#8BC53D]">Creations</span>
             </h2>
             <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 max-w-xl">
@@ -326,7 +326,7 @@ export const Skiper19ScrollHero: React.FC<Skiper19ScrollHeroProps> = ({
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-snug">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl text-white uppercase tracking-tight leading-snug font-anton">
                   {activeItem.title}
                 </h3>
 

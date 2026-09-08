@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
               <div className="w-10 h-10 rounded-xl bg-[#8BC53D] flex items-center justify-center font-black text-[#011207] text-lg shadow-md shadow-[#8BC53D]/30">
                 SW
               </div>
-              <span className="text-2xl text-white tracking-tight uppercase font-anton">
+              <span className="text-2xl md:text-4xl text-white tracking-tight uppercase font-anton">
                 {RESTAURANT_CONFIG.name}
               </span>
             </div>
