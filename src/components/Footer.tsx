@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
                 href={`https://wa.me/${RESTAURANT_CONFIG.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-xl bg-[#8BC53D]/15 border border-[#8BC53D]/30 text-[#8BC53D] text-xs font-bold font-mono flex items-center gap-1.5 hover:bg-[#8BC53D]/25 transition-colors"
+                className="px-3 py-1.5 rounded-xl bg-[#8BC53D]/15 border border-[#8BC53D]/30 text-[#8BC53D] text-xs font-bold flex items-center gap-1.5 hover:bg-[#8BC53D]/25 transition-colors"
               >
                 <span>WA: +{RESTAURANT_CONFIG.phone}</span>
               </a>
@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
 
           {/* Col 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-[#8BC53D] uppercase tracking-widest font-mono">
+            <h4 className="text-xs font-black text-[#8BC53D] uppercase tracking-widest">
               Navigation
             </h4>
             <ul className="space-y-2 text-xs text-[#E2F0CC]/80">
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
 
           {/* Col 3: Kitchen Timings */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-[#8BC53D] uppercase tracking-widest font-mono">
+            <h4 className="text-xs font-black text-[#8BC53D] uppercase tracking-widest">
               Operating Hours
             </h4>
             <div className="space-y-2 text-xs">
@@ -136,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase font-mono">
+          <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase">
             <span className="text-[#8BC53D]">01 SELECT FOOD</span>
             <span className="text-white/20">•</span>
             <span className="text-[#E2F0CC]/80">02 WHATSAPP CONFIRM</span>

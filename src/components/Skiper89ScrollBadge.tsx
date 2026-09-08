@@ -96,7 +96,7 @@ export const Skiper89ScrollBadge: React.FC = () => {
         className="group relative flex items-center gap-2 bg-[#012F13] hover:bg-[#073B1B] text-white px-3.5 py-2.5 rounded-full border border-[#8BC53D]/40 shadow-xl transition-all active:scale-95 cursor-pointer"
         title="Quick Navigation & Scroll to Top"
       >
-        <span className="text-xs font-mono font-bold text-[#8BC53D]">{percent}%</span>
+        <span className="text-xs font-bold text-[#8BC53D]">{percent}%</span>
         <ArrowUp className="w-4 h-4 text-white group-hover:-translate-y-0.5 transition-transform" />
       </button>
     </div>

@@ -179,7 +179,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
               <Gift className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#8BC53D] font-bold block">
+              <span className="text-[10px] uppercase tracking-widest text-[#8BC53D] font-bold block">
                 Feedback Reward
               </span>
               <span className="text-xs text-white font-bold">10% OFF Next Order</span>
@@ -187,7 +187,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
           </div>
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <div className="px-3 py-1.5 rounded-lg bg-[#012F13] border border-[#8BC53D]/50 text-[#8BC53D] font-mono font-black text-xs tracking-wider">
+            <div className="px-3 py-1.5 rounded-lg bg-[#012F13] border border-[#8BC53D]/50 text-[#8BC53D] font-black text-xs tracking-wider">
               THANKYOU10
             </div>
             <button
@@ -233,7 +233,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
               <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-tight">
                 Rate Your Meal & Service
               </h4>
-              <span className="px-2 py-0.5 rounded-full bg-[#8BC53D]/20 text-[#8BC53D] text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-[#8BC53D]/20 text-[#8BC53D] text-[10px] font-bold">
                 {orderNumber}
               </span>
             </div>
@@ -243,7 +243,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
           </div>
         </div>
 
-        <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#012F13] border border-[#8BC53D]/30 text-[10px] font-mono text-[#8BC53D]">
+        <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#012F13] border border-[#8BC53D]/30 text-[10px] text-[#8BC53D]">
           <Gift className="w-3.5 h-3.5" />
           <span>Reward Inside</span>
         </div>
@@ -297,7 +297,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
             <label className="text-xs font-bold text-[#E2F0CC]/80 uppercase tracking-wider">
               What stood out most?
             </label>
-            <span className="text-[10px] text-[#E2F0CC]/50 font-mono">Select all that apply</span>
+            <span className="text-[10px] text-[#E2F0CC]/50">Select all that apply</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -348,7 +348,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
                       <Flame className="w-3.5 h-3.5 text-[#8BC53D]" />
                       Food Flavor & Crispness
                     </span>
-                    <span className="font-mono font-bold text-[#8BC53D]">{foodRating}/5</span>
+                    <span className="font-bold text-[#8BC53D]">{foodRating}/5</span>
                   </div>
                   <div className="flex gap-1.5">
                     {[1, 2, 3, 4, 5].map((num) => (
@@ -356,7 +356,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
                         type="button"
                         key={num}
                         onClick={() => setFoodRating(num)}
-                        className={`flex-1 py-1 rounded-lg text-xs font-mono font-bold transition-colors cursor-pointer ${
+                        className={`flex-1 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                           num <= foodRating ? 'bg-[#8BC53D] text-[#011207]' : 'bg-[#011207] text-[#E2F0CC]/40'
                         }`}
                       >
@@ -373,7 +373,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
                       <Bike className="w-3.5 h-3.5 text-[#8BC53D]" />
                       Delivery Speed & Packaging
                     </span>
-                    <span className="font-mono font-bold text-[#8BC53D]">{deliveryRating}/5</span>
+                    <span className="font-bold text-[#8BC53D]">{deliveryRating}/5</span>
                   </div>
                   <div className="flex gap-1.5">
                     {[1, 2, 3, 4, 5].map((num) => (
@@ -381,7 +381,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
                         type="button"
                         key={num}
                         onClick={() => setDeliveryRating(num)}
-                        className={`flex-1 py-1 rounded-lg text-xs font-mono font-bold transition-colors cursor-pointer ${
+                        className={`flex-1 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                           num <= deliveryRating ? 'bg-[#8BC53D] text-[#011207]' : 'bg-[#011207] text-[#E2F0CC]/40'
                         }`}
                       >
@@ -401,7 +401,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
             <label className="text-xs font-bold text-[#E2F0CC]/80 uppercase tracking-wider">
               Comments & Suggestions
             </label>
-            <span className="text-[10px] text-[#E2F0CC]/50 font-mono">{comment.length}/300 chars</span>
+            <span className="text-[10px] text-[#E2F0CC]/50">{comment.length}/300 chars</span>
           </div>
 
           <textarea
@@ -414,7 +414,7 @@ export const PostOrderFeedbackForm: React.FC<PostOrderFeedbackFormProps> = ({
 
           {/* Quick Comment Starters */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] text-[#E2F0CC]/50 font-mono">Quick ideas:</span>
+            <span className="text-[10px] text-[#E2F0CC]/50">Quick ideas:</span>
             {[
               "Double truffle was incredible!",
               "Wings were scorching hot 🔥",

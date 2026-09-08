@@ -92,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex items-center gap-2 text-[#E2F0CC]/80 hover:text-white cursor-pointer transition-colors"
         >
           <div className="w-2 h-2 rounded-full bg-[#8BC53D] animate-pulse shadow-[0_0_8px_#8BC53D]" />
-          <span className="text-[#8BC53D] uppercase tracking-wider font-mono">LIVE STATUS: OPEN</span>
+          <span className="text-[#8BC53D] uppercase tracking-wider">LIVE STATUS: OPEN</span>
           <span className="text-[#E2F0CC]/40 hidden sm:inline">•</span>
           <span className="text-[#E2F0CC]/70 hidden sm:inline flex items-center gap-1">
             <Clock className="w-3 h-3 text-[#8BC53D]" />
@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <a
             href={`tel:+${RESTAURANT_CONFIG.phone}`}
-            className="hover:text-[#8BC53D] flex items-center gap-1 text-[10px] font-mono transition-colors"
+            className="hover:text-[#8BC53D] flex items-center gap-1 text-[10px] transition-colors"
           >
             <PhoneCall className="w-3 h-3 text-[#8BC53D]" />
             <span className="hidden xs:inline">{RESTAURANT_CONFIG.displayPhone}</span>
@@ -204,7 +204,7 @@ export const Header: React.FC<HeaderProps> = ({
               {favoritesCount > 0 && (
                 <span
                   ref={favBadgeRef}
-                  className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-red-500 text-white text-[10px] font-black font-mono flex items-center justify-center shadow-lg shadow-red-500/30"
+                  className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-red-500 text-white text-[10px] font-black flex items-center justify-center shadow-lg shadow-red-500/30"
                 >
                   {favoritesCount}
                 </span>
@@ -222,7 +222,7 @@ export const Header: React.FC<HeaderProps> = ({
             {cartCount > 0 && (
               <span
                 ref={badgeRef}
-                className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-[#8BC53D] text-[#011207] text-[10px] font-black font-mono flex items-center justify-center shadow-lg shadow-[#8BC53D]/30"
+                className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-[#8BC53D] text-[#011207] text-[10px] font-black flex items-center justify-center shadow-lg shadow-[#8BC53D]/30"
               >
                 {cartCount}
               </span>

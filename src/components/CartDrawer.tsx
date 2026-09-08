@@ -173,7 +173,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                     <h3 className="text-base font-black text-white uppercase tracking-tight">
                       Your Food Order
                     </h3>
-                    <span className="text-[11px] font-mono text-[#E2F0CC]/60">
+                    <span className="text-[11px] text-[#E2F0CC]/60">
                       {items.reduce((acc, i) => acc + i.quantity, 0)} Items Selected
                     </span>
                   </div>
@@ -258,7 +258,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                           <span className="text-[#E2F0CC]/70 font-medium">
                             Minimum Order Value (MOV):
                           </span>
-                          <span className="font-mono font-bold text-white">
+                          <span className="font-bold text-white">
                             PKR {minOrder}
                           </span>
                         </div>
@@ -319,7 +319,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                                 {item.options.join(', ')}
                               </p>
                             )}
-                            <span className="text-xs font-mono font-bold text-[#8BC53D] mt-1 block">
+                            <span className="text-xs font-bold text-[#8BC53D] mt-1 block">
                               PKR {(item.price * item.quantity).toLocaleString()}
                             </span>
                           </div>
@@ -334,7 +334,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
-                              <span className="w-6 text-center text-xs font-mono font-bold text-white">
+                              <span className="w-6 text-center text-xs font-bold text-white">
                                 {item.quantity}
                               </span>
                               <button
@@ -478,14 +478,14 @@ Please confirm this order and estimated preparation time. Thank you!`;
                   <div className="space-y-1.5 text-xs">
                     <div className="flex justify-between text-[#E2F0CC]/70">
                       <span>Subtotal</span>
-                      <span className="font-mono text-white font-bold">
+                      <span className="text-white font-bold">
                         PKR {subtotal.toLocaleString()}
                       </span>
                     </div>
 
                     <div className="flex justify-between text-[#E2F0CC]/70">
                       <span>{serviceMode === 'delivery' ? 'Express Delivery' : 'Pickup Fee'}</span>
-                      <span className="font-mono text-[#8BC53D] font-bold">
+                      <span className="text-[#8BC53D] font-bold">
                         {serviceMode === 'delivery'
                           ? isFreeDelivery
                             ? 'FREE'
@@ -496,7 +496,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
 
                     <div className="pt-2 border-t border-[#8BC53D]/20 flex justify-between items-center text-base">
                       <span className="font-black text-white uppercase">Total Amount</span>
-                      <span className="font-black text-xl text-[#8BC53D] font-mono">
+                      <span className="font-black text-xl text-[#8BC53D]">
                         PKR {grandTotal.toLocaleString()}
                       </span>
                     </div>
@@ -517,7 +517,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                   </button>
 
                   <p className="text-[10px] text-center text-[#E2F0CC]/50">
-                    Official WhatsApp Target: <span className="font-mono text-[#8BC53D] font-bold">+{RESTAURANT_CONFIG.phone}</span>
+                    Official WhatsApp Target: <span className="text-[#8BC53D] font-bold">+{RESTAURANT_CONFIG.phone}</span>
                   </p>
                 </div>
               )}

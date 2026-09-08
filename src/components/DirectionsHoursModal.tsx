@@ -60,24 +60,24 @@ export const DirectionsHoursModal: React.FC<DirectionsHoursModalProps> = ({
           <div className="bg-[#011207] rounded-2xl p-5 border border-[#8BC53D]/20 space-y-3">
             <div className="flex items-center justify-between pb-3 border-b border-[#8BC53D]/15">
               <span className="text-xs font-bold text-[#E2F0CC]/80 uppercase">Daily Hours</span>
-              <span className="text-xs font-mono font-bold text-[#8BC53D]">
+              <span className="text-xs font-bold text-[#8BC53D]">
                 {RESTAURANT_CONFIG.operatingHours.displayString}
               </span>
             </div>
 
             <div className="flex items-center justify-between text-xs text-[#E2F0CC]/70">
               <span>Monday – Sunday</span>
-              <span className="font-mono">6:00 PM – 1:00 AM (Late Night)</span>
+              <span>6:00 PM – 1:00 AM (Late Night)</span>
             </div>
 
             <div className="flex items-center justify-between text-xs text-[#E2F0CC]/70">
               <span>Delivery Radius</span>
-              <span className="font-mono">Within 10 km (Express Dispatch)</span>
+              <span>Within 10 km (Express Dispatch)</span>
             </div>
 
             <div className="flex items-center justify-between text-xs text-[#E2F0CC]/70">
               <span>Takeaway Prep Time</span>
-              <span className="font-mono">{RESTAURANT_CONFIG.takeawayRules.pickupEstimateMinutes} mins standard</span>
+              <span>{RESTAURANT_CONFIG.takeawayRules.pickupEstimateMinutes} mins standard</span>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ export const DirectionsHoursModal: React.FC<DirectionsHoursModalProps> = ({
               </div>
               <div>
                 <span className="text-[10px] text-[#E2F0CC]/50 uppercase font-bold block">Direct Call</span>
-                <span className="text-xs font-mono font-bold text-white">{RESTAURANT_CONFIG.displayPhone}</span>
+                <span className="text-xs font-bold text-white">{RESTAURANT_CONFIG.displayPhone}</span>
               </div>
             </a>
 

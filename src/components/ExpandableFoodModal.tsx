@@ -142,7 +142,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
               {item.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="bg-[#011207]/90 backdrop-blur-sm text-[#E2F0CC] border border-[#8BC53D]/20 px-2.5 py-0.5 rounded-lg text-[10px] font-mono font-bold"
+                  className="bg-[#011207]/90 backdrop-blur-sm text-[#E2F0CC] border border-[#8BC53D]/20 px-2.5 py-0.5 rounded-lg text-[10px] font-bold"
                 >
                   {tag}
                 </span>
@@ -163,11 +163,11 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
                 </p>
               </div>
               <div className="text-right flex-shrink-0">
-                <span className="text-2xl font-black text-[#8BC53D] font-mono block">
+                <span className="text-2xl font-black text-[#8BC53D] block">
                   PKR {singleUnitPrice.toLocaleString()}
                 </span>
                 {item.originalPrice && (
-                  <span className="text-xs text-[#E2F0CC]/40 line-through font-mono">
+                  <span className="text-xs text-[#E2F0CC]/40 line-through">
                     PKR {item.originalPrice.toLocaleString()}
                   </span>
                 )}
@@ -201,7 +201,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
                   <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                     {group.title}
                   </h4>
-                  <span className="text-[10px] text-[#8BC53D] font-mono uppercase">Required Choice</span>
+                  <span className="text-[10px] text-[#8BC53D] uppercase">Required Choice</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -230,7 +230,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
                         </div>
 
                         {opt.price > 0 && (
-                          <span className="text-xs font-mono text-[#8BC53D] font-bold">
+                          <span className="text-xs text-[#8BC53D] font-bold">
                             +PKR {opt.price}
                           </span>
                         )}
@@ -253,7 +253,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
               >
                 <Minus className="w-4 h-4" />
               </button>
-              <span className="w-8 text-center text-sm font-bold text-white font-mono">
+              <span className="w-8 text-center text-sm font-bold text-white">
                 {quantity}
               </span>
               <button
@@ -275,7 +275,7 @@ export const ExpandableFoodModal: React.FC<ExpandableFoodModalProps> = ({
                 <ShoppingBag className="w-4 h-4" />
                 <span>Add to Cart</span>
               </div>
-              <span className="font-mono text-sm sm:text-base font-black">
+              <span className="text-sm sm:text-base font-black">
                 PKR {totalPrice.toLocaleString()}
               </span>
             </button>

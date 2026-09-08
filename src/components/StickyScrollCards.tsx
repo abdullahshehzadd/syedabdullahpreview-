@@ -37,7 +37,7 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
           </p>
         </div>
 
-        <span className="text-xs font-bold text-[#E2F0CC]/50 uppercase tracking-widest self-start sm:self-auto font-mono">
+        <span className="text-xs font-bold text-[#E2F0CC]/50 uppercase tracking-widest self-start sm:self-auto">
           {SIGNATURE_DEALS.length} Exclusive Deals Active
         </span>
       </div>
@@ -116,10 +116,10 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
                   )}
 
                   <div className="bg-[#011207]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#8BC53D]/30 flex items-center gap-2">
-                    <span className="text-xs text-[#E2F0CC]/40 line-through font-mono">
+                    <span className="text-xs text-[#E2F0CC]/40 line-through">
                       PKR {deal.originalPrice.toLocaleString()}
                     </span>
-                    <span className="text-sm md:text-base font-black text-[#8BC53D] font-mono">
+                    <span className="text-sm md:text-base font-black text-[#8BC53D]">
                       PKR {deal.price.toLocaleString()}
                     </span>
                   </div>

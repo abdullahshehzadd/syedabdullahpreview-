@@ -37,7 +37,7 @@ export const SocialProofWorkflow: React.FC = () => {
     <section id="how-it-works" className="py-8 md:py-12">
       <div className="bg-[#012F13] rounded-3xl p-6 sm:p-10 border border-[#8BC53D]/30">
         <div className="text-center max-w-xl mx-auto mb-8">
-          <span className="text-[11px] font-black uppercase tracking-wider text-[#8BC53D] block mb-1 font-mono">
+          <span className="text-[11px] font-black uppercase tracking-wider text-[#8BC53D] block mb-1">
             Fresh From Our Kitchen
           </span>
           <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
@@ -64,7 +64,7 @@ export const SocialProofWorkflow: React.FC = () => {
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xl font-black text-[#E2F0CC]/30 font-mono group-hover:text-[#8BC53D] transition-colors">
+                    <span className="text-xl font-black text-[#E2F0CC]/30 group-hover:text-[#8BC53D] transition-colors">
                       {step.number}
                     </span>
                   </div>
@@ -79,7 +79,7 @@ export const SocialProofWorkflow: React.FC = () => {
 
                 <div className="mt-4 pt-3 border-t border-[#8BC53D]/15 flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: step.color }} />
-                  <span className="text-[10px] font-mono text-[#8BC53D] font-bold uppercase tracking-wider">
+                  <span className="text-[10px] text-[#8BC53D] font-bold uppercase tracking-wider">
                     Step {step.number}
                   </span>
                 </div>

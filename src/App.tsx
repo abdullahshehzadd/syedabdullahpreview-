@@ -279,7 +279,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#011207] text-[#E2F0CC] font-sans selection:bg-[#8BC53D] selection:text-[#011207] relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#011207] text-[#E2F0CC] selection:bg-[#8BC53D] selection:text-[#011207] relative overflow-x-hidden">
       {/* Main Sticky Header */}
       <Header
         serviceMode={serviceMode}
@@ -366,7 +366,7 @@ export default function App() {
         href="https://basegridpk.vercel.app"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-40 px-3.5 py-1.5 rounded-full bg-[#011207]/90 hover:bg-[#012F13] border border-[#8BC53D]/40 text-[#E2F0CC] hover:text-[#8BC53D] text-xs font-mono font-medium shadow-2xl backdrop-blur-md transition-all flex items-center gap-1.5 group cursor-pointer"
+        className="fixed bottom-4 right-4 z-40 px-3.5 py-1.5 rounded-full bg-[#011207]/90 hover:bg-[#012F13] border border-[#8BC53D]/40 text-[#E2F0CC] hover:text-[#8BC53D] text-xs font-medium shadow-2xl backdrop-blur-md transition-all flex items-center gap-1.5 group cursor-pointer"
       >
         <span className="w-2 h-2 rounded-full bg-[#8BC53D] animate-pulse" />
         <span>Demo by <strong className="text-white group-hover:text-[#8BC53D] font-bold">BaseGrid</strong></span>

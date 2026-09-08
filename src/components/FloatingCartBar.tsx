@@ -34,7 +34,7 @@ export const FloatingCartBar: React.FC<FloatingCartBarProps> = ({
         >
           {/* Count Badge + Subtotal */}
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-xl bg-[#8BC53D] text-[#011207] flex items-center justify-center font-black text-xs font-mono shadow-md">
+            <div className="relative w-10 h-10 rounded-xl bg-[#8BC53D] text-[#011207] flex items-center justify-center font-black text-xs shadow-md">
               <ShoppingBag className="w-5 h-5" />
               <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#011207] text-[#8BC53D] border border-[#8BC53D] text-[10px] flex items-center justify-center font-bold">
                 {totalCount}
@@ -45,7 +45,7 @@ export const FloatingCartBar: React.FC<FloatingCartBarProps> = ({
               <span className="text-[10px] font-bold text-[#E2F0CC]/60 uppercase tracking-widest block">
                 {serviceMode === 'delivery' ? 'Delivery Cart' : 'Takeaway Cart'}
               </span>
-              <span className="text-sm sm:text-base font-black text-white font-mono">
+              <span className="text-sm sm:text-base font-black text-white">
                 PKR {subtotal.toLocaleString()}
               </span>
             </div>

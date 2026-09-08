@@ -191,7 +191,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                 <span className="text-[9px] sm:text-[10px] font-black uppercase bg-[#C2F84F] text-[#1F3A4B] px-1.5 py-0.5 rounded">
                   {SHOWCASE_DISHES[0].badge}
                 </span>
-                <span className="text-xs font-mono font-bold text-[#C2F84F]">
+                <span className="text-xs font-bold text-[#C2F84F]">
                   {SHOWCASE_DISHES[0].price}
                 </span>
               </div>
@@ -251,7 +251,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                 <span className="text-[9px] sm:text-[10px] font-black uppercase bg-[#C2F84F] text-[#1F3A4B] px-1.5 py-0.5 rounded">
                   {SHOWCASE_DISHES[1].badge}
                 </span>
-                <span className="text-xs font-mono font-bold text-[#C2F84F]">
+                <span className="text-xs font-bold text-[#C2F84F]">
                   {SHOWCASE_DISHES[1].price}
                 </span>
               </div>
@@ -311,7 +311,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
                 <span className="text-[9px] sm:text-[10px] font-black uppercase bg-[#C2F84F] text-[#1F3A4B] px-1.5 py-0.5 rounded">
                   {SHOWCASE_DISHES[2].badge}
                 </span>
-                <span className="text-xs font-mono font-bold text-[#C2F84F]">
+                <span className="text-xs font-bold text-[#C2F84F]">
                   {SHOWCASE_DISHES[2].price}
                 </span>
               </div>

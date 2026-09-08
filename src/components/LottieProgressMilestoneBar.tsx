@@ -97,11 +97,11 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs sm:text-sm font-black text-white uppercase tracking-tight font-mono">
+              <span className="text-xs sm:text-sm font-black text-white uppercase tracking-tight">
                 {activeMilestone.title}
               </span>
               <span
-                className="px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-mono font-black uppercase tracking-wider"
+                className="px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-black uppercase tracking-wider"
                 style={{
                   backgroundColor: `${activeMilestone.color}20`,
                   color: activeMilestone.color,
@@ -118,11 +118,11 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
         </div>
 
         <div className="text-right flex-shrink-0">
-          <div className="text-[10px] font-mono text-[#E2F0CC]/50 uppercase tracking-widest">
+          <div className="text-[10px] text-[#E2F0CC]/50 uppercase tracking-widest">
             Estimated Pace
           </div>
           <div
-            className="text-xs sm:text-sm font-mono font-black"
+            className="text-xs sm:text-sm font-black"
             style={{ color: activeMilestone.color }}
           >
             {activeMilestone.timeEstimate}
@@ -231,7 +231,7 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
 
               {/* Status Tooltip Flag */}
               <div
-                className="absolute top-10 whitespace-nowrap px-2 py-0.5 rounded-full text-[9px] font-mono font-bold text-[#011207] shadow-lg flex items-center gap-1"
+                className="absolute top-10 whitespace-nowrap px-2 py-0.5 rounded-full text-[9px] font-bold text-[#011207] shadow-lg flex items-center gap-1"
                 style={{ backgroundColor: activeMilestone.color }}
               >
                 <span>{activeMilestone.shortLabel}</span>
@@ -306,7 +306,7 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
                   >
                     {step.title}
                   </span>
-                  <span className="text-[9px] font-mono text-[#E2F0CC]/40 block sm:hidden">
+                  <span className="text-[9px] text-[#E2F0CC]/40 block sm:hidden">
                     {step.timeEstimate}
                   </span>
                 </div>
@@ -324,12 +324,12 @@ export const LottieProgressMilestoneBar: React.FC<LottieProgressMilestoneBarProp
             className="w-2 h-2 rounded-full animate-ping"
             style={{ backgroundColor: activeMilestone.color }}
           />
-          <span className="text-[11px] font-mono text-[#E2F0CC]/70">
+          <span className="text-[11px] text-[#E2F0CC]/70">
             Click any milestone above to instantly test live synchronization
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 font-mono text-[10px] font-bold text-[#8BC53D]">
+        <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#8BC53D]">
           <span>Smooth 60FPS Lottie Progress</span>
         </div>
       </div>

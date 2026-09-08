@@ -222,7 +222,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                   <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
                     Live Order Tracker
                   </h3>
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#8BC53D]/20 border border-[#8BC53D]/40 text-[#8BC53D] text-[10px] font-mono font-bold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#8BC53D]/20 border border-[#8BC53D]/40 text-[#8BC53D] text-[10px] font-bold">
                     {activeOrder.orderNumber}
                   </span>
                 </div>
@@ -265,7 +265,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
             >
               <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
               <span>Customer Feedback</span>
-              <span className="hidden sm:inline px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 text-[9px] font-mono font-bold">
+              <span className="hidden sm:inline px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 text-[9px] font-bold">
                 10% Off
               </span>
             </button>
@@ -292,10 +292,10 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                       <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#8BC53D] animate-ping" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-mono tracking-widest text-[#8BC53D] block">
+                      <span className="text-[10px] uppercase tracking-widest text-[#8BC53D] block">
                         Estimated Delivery
                       </span>
-                      <div className="text-2xl sm:text-3xl font-black text-white font-mono">
+                      <div className="text-2xl sm:text-3xl font-black text-white">
                         {currentStatus === 'Delivered'
                           ? 'Arrived & Delivered'
                           : `${activeOrder.estimatedArrivalMinutes} Minutes`}
@@ -308,7 +308,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
 
                   {/* Status Simulation Bar */}
                   <div className="flex items-center gap-2 bg-[#012F13] p-1.5 rounded-xl border border-[#8BC53D]/20 self-stretch sm:self-auto justify-between">
-                    <div className="text-[10px] text-[#E2F0CC]/60 px-2 font-mono">Simulate:</div>
+                    <div className="text-[10px] text-[#E2F0CC]/60 px-2">Simulate:</div>
                     <div className="flex gap-1 overflow-x-auto">
                       {steps.map((s) => (
                         <button
@@ -422,7 +422,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                       <div className="w-10 h-10 rounded-2xl bg-[#8BC53D] text-[#011207] flex items-center justify-center shadow-2xl shadow-[#8BC53D]/50 border-2 border-white animate-bounce">
                         <Bike className="w-5 h-5" />
                       </div>
-                      <div className="mt-1 bg-[#011207]/95 border border-[#8BC53D] px-2 py-0.5 rounded-md text-[9px] font-mono text-[#8BC53D] whitespace-nowrap shadow-md">
+                      <div className="mt-1 bg-[#011207]/95 border border-[#8BC53D] px-2 py-0.5 rounded-md text-[9px] text-[#8BC53D] whitespace-nowrap shadow-md">
                         {currentStatus === 'Out for Delivery' ? '⚡ Express En Route' : currentStatus}
                       </div>
                     </div>
@@ -430,12 +430,12 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
 
                   {/* Map Controls / Live GPS Badge */}
                   <div className="relative z-10 flex items-center justify-between w-full">
-                    <div className="inline-flex items-center gap-1.5 bg-[#011207]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8BC53D]/30 text-[10px] text-[#8BC53D] font-mono font-bold">
+                    <div className="inline-flex items-center gap-1.5 bg-[#011207]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8BC53D]/30 text-[10px] text-[#8BC53D] font-bold">
                       <span className="w-2 h-2 rounded-full bg-[#8BC53D] animate-ping" />
                       <span>LIVE DISPATCH ACTIVE</span>
                     </div>
 
-                    <div className="text-[10px] text-white/70 bg-[#011207]/80 px-2.5 py-1 rounded-full font-mono">
+                    <div className="text-[10px] text-white/70 bg-[#011207]/80 px-2.5 py-1 rounded-full">
                       Estimated ~12 mins away
                     </div>
                   </div>
@@ -450,7 +450,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                     <div>
                       <div className="flex items-center gap-2">
                         <h5 className="text-sm font-bold text-white">{activeOrder.riderName}</h5>
-                        <span className="px-2 py-0.5 rounded bg-[#8BC53D]/20 text-[#8BC53D] text-[10px] font-mono font-bold">
+                        <span className="px-2 py-0.5 rounded bg-[#8BC53D]/20 text-[#8BC53D] text-[10px] font-bold">
                           ⭐ {activeOrder.riderRating}
                         </span>
                       </div>
@@ -487,7 +487,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                     <span className="font-bold text-[#E2F0CC]/70 uppercase tracking-wider">
                       Order Summary ({activeOrder.items.length} items)
                     </span>
-                    <span className="font-mono text-[#8BC53D] font-bold">
+                    <span className="text-[#8BC53D] font-bold">
                       PKR {activeOrder.grandTotal.toLocaleString()}
                     </span>
                   </div>
@@ -496,10 +496,10 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
                     {activeOrder.items.map((item, idx) => (
                       <div key={idx} className="flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono font-bold text-[#8BC53D]">{item.quantity}x</span>
+                          <span className="font-bold text-[#8BC53D]">{item.quantity}x</span>
                           <span className="text-white">{item.name}</span>
                         </div>
-                        <span className="font-mono text-[#E2F0CC]/80">
+                        <span className="text-[#E2F0CC]/80">
                           PKR {(item.price * item.quantity).toLocaleString()}
                         </span>
                       </div>
@@ -522,7 +522,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
 
           {/* Footer Controls */}
           <div className="pt-4 border-t border-[#8BC53D]/20 flex items-center justify-between gap-3">
-            <div className="text-xs text-[#E2F0CC]/60 font-mono">
+            <div className="text-xs text-[#E2F0CC]/60">
               Status updates automatically every few seconds.
             </div>
             <button

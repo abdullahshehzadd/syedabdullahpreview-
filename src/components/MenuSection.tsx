@@ -270,7 +270,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                         {item.tags.slice(0, 2).map((t, idx) => (
                           <span
                             key={idx}
-                            className="text-[9px] font-mono text-[#E2F0CC]/60 bg-[#011207] px-2 py-0.5 rounded border border-[#8BC53D]/10"
+                            className="text-[9px] text-[#E2F0CC]/60 bg-[#011207] px-2 py-0.5 rounded border border-[#8BC53D]/10"
                           >
                             {t}
                           </span>
@@ -282,11 +282,11 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                   {/* Price & Action Row */}
                   <div className="pt-3 mt-2 border-t border-[#8BC53D]/15 flex items-center justify-between gap-2">
                     <div>
-                      <span className="text-sm sm:text-base font-black text-[#8BC53D] font-mono block">
+                      <span className="text-sm sm:text-base font-black text-[#8BC53D] block">
                         PKR {item.price.toLocaleString()}
                       </span>
                       {item.originalPrice && (
-                        <span className="text-[10px] text-[#E2F0CC]/40 line-through font-mono">
+                        <span className="text-[10px] text-[#E2F0CC]/40 line-through">
                           PKR {item.originalPrice.toLocaleString()}
                         </span>
                       )}

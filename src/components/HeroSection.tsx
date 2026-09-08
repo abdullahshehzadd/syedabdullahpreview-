@@ -491,13 +491,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <span>Artisan Woodfired Experience</span>
           </div>
 
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#012F13]/80 border border-[#8BC53D]/25 text-[#E2F0CC] text-xs font-mono">
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#012F13]/80 border border-[#8BC53D]/25 text-[#E2F0CC] text-xs">
             <span className="w-2 h-2 rounded-full bg-[#8BC53D] animate-ping" />
             <span>450°C Stone Oven Live</span>
           </div>
 
           {manualPullRef.current > 0.05 && (
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/50 text-amber-400 text-xs font-mono font-bold animate-pulse">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/50 text-amber-400 text-xs font-bold animate-pulse">
               <Flame className="w-3.5 h-3.5 fill-amber-400" />
               <span>{Math.round(manualPullRef.current * 100)}% Cheese Pull</span>
             </div>
@@ -580,7 +580,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {onOpenHoursModal && (
             <button
               onClick={onOpenHoursModal}
-              className="px-4 py-2 rounded-full bg-[#011207]/80 hover:bg-[#012F13] text-[#8BC53D] text-xs font-mono font-medium border border-[#8BC53D]/25 transition-all cursor-pointer flex items-center gap-1.5 hover:border-[#8BC53D]/50"
+              className="px-4 py-2 rounded-full bg-[#011207]/80 hover:bg-[#012F13] text-[#8BC53D] text-xs font-medium border border-[#8BC53D]/25 transition-all cursor-pointer flex items-center gap-1.5 hover:border-[#8BC53D]/50"
             >
               <Clock className="w-3.5 h-3.5" />
               <span>Hours & Location</span>
@@ -589,7 +589,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* 6. Quick Delivery & Trust Indicators */}
-        <div className="hero-fade-in flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6 text-xs text-[#E2F0CC]/80 font-mono">
+        <div className="hero-fade-in flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6 text-xs text-[#E2F0CC]/80">
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8BC53D]" />
             <span>25–35 Min Delivery</span>
@@ -616,7 +616,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <ChevronDown className="w-4 h-4 text-[#8BC53D] group-hover:text-[#011207] transition-transform duration-300 group-hover:translate-y-1" />
           </button>
           
-          <div className="flex items-center gap-2 text-[10px] lowercase font-mono tracking-widest text-[#8BC53D]/80 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+          <div className="flex items-center gap-2 text-[10px] lowercase tracking-widest text-[#8BC53D]/80 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             <Move className="w-3 h-3 animate-pulse" />
             <span>scroll or drag pizza to pull cheese</span>
           </div>
@@ -627,7 +627,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {!assetsLoaded && (
         <div className="absolute inset-0 z-30 bg-[#011207] flex flex-col items-center justify-center gap-3">
           <div className="w-10 h-10 border-3 border-[#8BC53D]/20 border-t-[#8BC53D] rounded-full animate-spin" />
-          <span className="text-xs font-mono text-[#8BC53D]">Loading HD Pizza Engine ({loadPercent}%)</span>
+          <span className="text-xs text-[#8BC53D]">Loading HD Pizza Engine ({loadPercent}%)</span>
         </div>
       )}
     </section>

@@ -17,7 +17,7 @@ export const GoogleReviewsSection: React.FC = () => {
             <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
               WHAT CUSTOMERS <span className="text-[#8BC53D]">SAY</span>
             </h3>
-            <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 leading-relaxed font-mono">
+            <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 leading-relaxed">
               Sample reviews — your real customer feedback appears here
             </p>
           </div>
@@ -62,7 +62,7 @@ export const GoogleReviewsSection: React.FC = () => {
                         </h4>
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#8BC53D]" />
                       </div>
-                      <span className="text-[10px] text-[#E2F0CC]/50 font-mono">
+                      <span className="text-[10px] text-[#E2F0CC]/50">
                         {rev.relativeTime} • Demo Order
                       </span>
                     </div>
