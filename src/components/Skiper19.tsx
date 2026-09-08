@@ -127,7 +127,7 @@ export const Skiper19: React.FC<Skiper19Props> = ({
             <span>Handcrafted Kitchen Showcase</span>
           </div>
 
-          <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-[#1F3A4B] uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight text-[#1F3A4B] uppercase font-anton">
             Pure Flavor <span className="text-[#8BC53D] italic">In Every Scroll</span>
           </h2>
 

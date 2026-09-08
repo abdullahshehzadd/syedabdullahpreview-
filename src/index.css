@@ -14,6 +14,14 @@
     font-family: 'Figtree', sans-serif;
   }
 
+  .font-anton {
+    font-family: 'Anton', sans-serif !important;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+  }
+
   body {
     background-color: #F5F0E8 !important;
     color: #1A1815 !important;

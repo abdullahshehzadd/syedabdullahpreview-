@@ -48,7 +48,7 @@ export const DirectionsHoursModal: React.FC<DirectionsHoursModalProps> = ({
               <Clock className="w-3.5 h-3.5" />
               <span>Operational Schedule & Location</span>
             </div>
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight">
+            <h3 className="text-xl sm:text-2xl text-white uppercase tracking-tight font-anton">
               {RESTAURANT_CONFIG.name}
             </h3>
             <p className="text-xs text-[#E2F0CC]/60 mt-1">

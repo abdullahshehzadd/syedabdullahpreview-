@@ -105,7 +105,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
       {/* Active Filter Header */}
       <div className="flex items-center justify-between mt-6 mb-6">
         <div>
-          <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight flex items-center gap-2">
+          <h3 className="text-2xl md:text-4xl text-white uppercase tracking-tight flex items-center gap-2 font-anton">
             <span>
               {searchQuery.trim() !== ''
                 ? `Search Results for "${searchQuery}"`

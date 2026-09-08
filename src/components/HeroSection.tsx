@@ -506,7 +506,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* 2. Main High-Contrast Headline */}
         <div className="hero-fade-in mb-3 sm:mb-5">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white lowercase italic tracking-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.95)] leading-none select-text">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white lowercase italic tracking-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.95)] leading-none select-text font-anton">
             smash & <span className="text-[#8BC53D] drop-shadow-[0_0_40px_rgba(139,197,61,0.65)]">woodfire</span>
           </h1>
         </div>

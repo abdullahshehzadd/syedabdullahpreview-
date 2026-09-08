@@ -170,7 +170,7 @@ Please confirm this order and estimated preparation time. Thank you!`;
                     <ShoppingBag className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base font-black text-white uppercase tracking-tight">
+                    <h3 className="text-xl sm:text-2xl text-white uppercase tracking-tight font-anton">
                       Your Food Order
                     </h3>
                     <span className="text-[11px] text-[#E2F0CC]/60">

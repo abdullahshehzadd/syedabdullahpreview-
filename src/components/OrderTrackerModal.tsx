@@ -219,7 +219,7 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
+                  <h3 className="text-xl sm:text-2xl text-white uppercase tracking-tight font-anton">
                     Live Order Tracker
                   </h3>
                   <span className="px-2.5 py-0.5 rounded-full bg-[#8BC53D]/20 border border-[#8BC53D]/40 text-[#8BC53D] text-[10px] font-bold">

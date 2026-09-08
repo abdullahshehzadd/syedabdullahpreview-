@@ -40,7 +40,7 @@ export const SocialProofWorkflow: React.FC = () => {
           <span className="text-[11px] font-black uppercase tracking-wider text-[#8BC53D] block mb-1">
             Fresh From Our Kitchen
           </span>
-          <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+          <h3 className="text-3xl sm:text-4xl text-white uppercase tracking-tight font-anton">
             How Ordering Works
           </h3>
           <p className="text-xs sm:text-sm text-[#E2F0CC]/70 mt-1">

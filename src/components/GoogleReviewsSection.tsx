@@ -14,7 +14,7 @@ export const GoogleReviewsSection: React.FC = () => {
               <Star className="w-3.5 h-3.5 fill-current" />
               <span>Customer Feedback</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+            <h3 className="text-3xl sm:text-4xl text-white uppercase tracking-tight font-anton">
               WHAT CUSTOMERS <span className="text-[#8BC53D]">SAY</span>
             </h3>
             <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 leading-relaxed">
