@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
 import { ShoppingBag, MapPin, Clock, Search, PhoneCall, Bike, Heart } from 'lucide-react';
 import { RESTAURANT_CONFIG } from '../restaurant.config.ts';
 
@@ -17,12 +16,6 @@ interface HeaderProps {
   onOpenFavorites?: () => void;
 }
 
-declare global {
-  interface Window {
-    anime?: any;
-  }
-}
-
 export const Header: React.FC<HeaderProps> = ({
   serviceMode,
   onToggleServiceMode,
@@ -38,47 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const badgeRef = useRef<HTMLSpanElement>(null);
   const favBadgeRef = useRef<HTMLSpanElement>(null);
-  const prevCount = useRef(cartCount);
-  const prevFavCount = useRef(favoritesCount);
 
-  // Global smooth scroll progress bar
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  // Micro-rebound animation on cart count changes using anime.js
-  useEffect(() => {
-    if (cartCount !== prevCount.current && badgeRef.current) {
-      if (typeof window !== 'undefined' && window.anime) {
-        window.anime({
-          targets: badgeRef.current,
-          scale: [1, 1.45, 0.9, 1.1, 1],
-          rotate: [-12, 12, -6, 6, 0],
-          duration: 450,
-          easing: 'easeOutElastic(1, .6)'
-        });
-      }
-      prevCount.current = cartCount;
-    }
-  }, [cartCount]);
-
-  // Micro-bounce animation on favorite count change
-  useEffect(() => {
-    if (favoritesCount !== prevFavCount.current && favBadgeRef.current) {
-      if (typeof window !== 'undefined' && window.anime) {
-        window.anime({
-          targets: favBadgeRef.current,
-          scale: [1, 1.4, 0.95, 1],
-          duration: 350,
-          easing: 'easeOutBack'
-        });
-      }
-      prevFavCount.current = favoritesCount;
-    }
-  }, [favoritesCount]);
 
   return (
     <header
@@ -245,11 +198,8 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Global Scroll Progress Bar Line */}
-      <motion.div
-        style={{ scaleX, transformOrigin: 'left' }}
-        className="h-[2px] bg-gradient-to-r from-[#8BC53D] via-[#F59E0B] to-[#8BC53D] w-full"
-      />
+      {/* Accent Header Line */}
+      <div className="h-[2px] bg-gradient-to-r from-[#8BC53D]/40 via-[#8BC53D] to-[#8BC53D]/40 w-full" />
     </header>
   );
 };

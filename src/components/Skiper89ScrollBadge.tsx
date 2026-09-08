@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUp, Utensils, Sparkles, Star } from 'lucide-react';
 
 export const Skiper89ScrollBadge: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 140,
-    damping: 24,
-    mass: 0.5,
-    restDelta: 0.001
-  });
-
   const [percent, setPercent] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    return smoothProgress.on('change', (latest) => {
-      const p = Math.round(latest * 100);
-      setPercent(p);
-      setIsVisible(p > 3);
-    });
-  }, [smoothProgress]);
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight > 0) {
+        const p = Math.min(100, Math.max(0, Math.round((window.scrollY / scrollHeight) * 100)));
+        setPercent(p);
+        setIsVisible(p > 3);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useReveal } from './hooks/useReveal.ts';
 import { RESTAURANT_CONFIG, MenuItem, SignatureDeal, MENU_ITEMS } from './restaurant.config.ts';
 import { Header } from './components/Header.tsx';
 import { Skiper19 } from './components/Skiper19.tsx';
@@ -18,6 +19,7 @@ import { Skiper89ScrollBadge } from './components/Skiper89ScrollBadge.tsx';
 import { CheckCircle } from 'lucide-react';
 
 export default function App() {
+  useReveal();
   const [serviceMode, setServiceMode] = useState<'delivery' | 'takeaway'>('delivery');
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {

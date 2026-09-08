@@ -4,7 +4,7 @@ import { GOOGLE_REVIEWS } from '../restaurant.config.ts';
 
 export const GoogleReviewsSection: React.FC = () => {
   return (
-    <section id="google-reviews" className="py-10 md:py-16">
+    <section id="google-reviews" data-reveal className="py-10 md:py-16">
       {/* Container Header */}
       <div className="bg-[#012F13] rounded-3xl p-6 sm:p-10 border border-[#8BC53D]/30 relative overflow-hidden">
         {/* Top Header Row */}
@@ -41,7 +41,7 @@ export const GoogleReviewsSection: React.FC = () => {
         </div>
 
         {/* Customer Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8">
+        <div data-reveal-stagger className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8">
           {GOOGLE_REVIEWS.map((rev) => (
             <div
               key={rev.id}

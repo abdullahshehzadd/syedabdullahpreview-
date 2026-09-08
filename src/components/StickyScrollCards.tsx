@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { Sparkles, ShoppingBag, ArrowRight, Heart } from 'lucide-react';
 import { SIGNATURE_DEALS, SignatureDeal } from '../restaurant.config.ts';
 
@@ -21,7 +21,7 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="signature-deals" className="relative py-8 md:py-14">
+    <section id="signature-deals" data-reveal className="relative py-8 md:py-14">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
         <div>
@@ -43,7 +43,7 @@ export const StickyScrollCards: React.FC<StickyScrollCardsProps> = ({
       </div>
 
       {/* Cards Deck */}
-      <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <div ref={containerRef} data-reveal-stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {SIGNATURE_DEALS.map((deal, idx) => {
           const tiltDeg = TILT_PATTERN[idx % TILT_PATTERN.length];
 

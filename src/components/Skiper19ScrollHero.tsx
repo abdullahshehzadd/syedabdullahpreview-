@@ -157,6 +157,7 @@ export const Skiper19ScrollHero: React.FC<Skiper19ScrollHeroProps> = ({
   return (
     <section 
       id="signature-showcase" 
+      data-reveal
       className="relative w-full py-8 sm:py-12 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto">
