@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
           <div className="space-y-4 md:col-span-2">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#8BC53D] flex items-center justify-center font-black text-[#011207] text-lg shadow-md shadow-[#8BC53D]/30">
-                DR
+                SW
               </div>
               <span className="text-xl font-black text-white tracking-tight uppercase">
                 {RESTAURANT_CONFIG.name}
@@ -125,7 +125,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHoursModal, onScrollToMenu
         {/* Bottom Sub-bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#E2F0CC]/50">
           <div>
-            © {new Date().getFullYear()} {RESTAURANT_CONFIG.name} Engine • Geometric Balance Architecture
+            © {new Date().getFullYear()} Smash & Woodfire — Demo by{' '}
+            <a
+              href="https://basegridpk.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8BC53D] hover:underline font-bold"
+            >
+              BaseGrid
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase font-mono">

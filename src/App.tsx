@@ -361,6 +361,17 @@ export default function App() {
         onScrollToMenu={scrollToMenu}
       />
 
+      {/* Fixed BaseGrid Branding Badge */}
+      <a
+        href="https://basegridpk.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 z-40 px-3.5 py-1.5 rounded-full bg-[#011207]/90 hover:bg-[#012F13] border border-[#8BC53D]/40 text-[#E2F0CC] hover:text-[#8BC53D] text-xs font-mono font-medium shadow-2xl backdrop-blur-md transition-all flex items-center gap-1.5 group cursor-pointer"
+      >
+        <span className="w-2 h-2 rounded-full bg-[#8BC53D] animate-pulse" />
+        <span>Demo by <strong className="text-white group-hover:text-[#8BC53D] font-bold">BaseGrid</strong></span>
+      </a>
+
       {/* Component 1: Skiper89 Floating Scroll Progress Badge */}
       <Skiper89ScrollBadge />
 

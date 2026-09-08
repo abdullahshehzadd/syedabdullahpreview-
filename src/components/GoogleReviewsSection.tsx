@@ -1,6 +1,6 @@
 import React from 'react';
-import { Star, MessageSquare, ExternalLink, CheckCircle2 } from 'lucide-react';
-import { GOOGLE_REVIEWS, RESTAURANT_CONFIG } from '../restaurant.config.ts';
+import { Star, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { GOOGLE_REVIEWS } from '../restaurant.config.ts';
 
 export const GoogleReviewsSection: React.FC = () => {
   return (
@@ -12,45 +12,30 @@ export const GoogleReviewsSection: React.FC = () => {
           <div className="max-w-md">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8BC53D]/15 border border-[#8BC53D]/30 text-[#8BC53D] text-xs font-black uppercase tracking-wider mb-3">
               <Star className="w-3.5 h-3.5 fill-current" />
-              <span>Verified Customer Feedback</span>
+              <span>Customer Feedback</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
-              Google Maps <span className="text-[#8BC53D]">Reviews</span>
+              WHAT CUSTOMERS <span className="text-[#8BC53D]">SAY</span>
             </h3>
-            <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 leading-relaxed">
-              Consistently rated top-tier for gourmet burgers, blistered sourdough pizzas, and fast doorstep delivery.
+            <p className="text-[#E2F0CC]/70 text-xs sm:text-sm mt-1 leading-relaxed font-mono">
+              Sample reviews — your real customer feedback appears here
             </p>
           </div>
 
-          {/* Aggregate Rating Scoreboard */}
-          <div className="flex items-center gap-5 bg-[#011207] p-4 sm:p-6 rounded-2xl border border-[#8BC53D]/20 flex-shrink-0">
+          {/* Rating Indicator Box */}
+          <div className="flex items-center gap-4 bg-[#011207] p-4 sm:p-5 rounded-2xl border border-[#8BC53D]/20 flex-shrink-0">
             <div>
-              <div className="text-4xl sm:text-5xl font-black text-[#8BC53D] font-mono tracking-tight leading-none">
-                4.9
-              </div>
-              <div className="flex items-center gap-1 mt-1 text-[#8BC53D]">
+              <div className="flex items-center gap-1 text-[#8BC53D] mb-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-            </div>
-
-            <div className="border-l border-[#8BC53D]/20 pl-5 text-left">
-              <span className="text-xs font-bold text-white uppercase tracking-wider block">
-                450+ Reviews
+              <span className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider block">
+                Your Rating Appears Here
               </span>
               <span className="text-[11px] text-[#E2F0CC]/50 block mt-0.5">
-                99% Recommendation Rate
+                Real customer feedback syncs after launch
               </span>
-              <a
-                href={RESTAURANT_CONFIG.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-[#8BC53D] hover:underline font-bold mt-1 inline-flex items-center gap-1"
-              >
-                <span>Write a Review</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
             </div>
           </div>
         </div>
@@ -78,7 +63,7 @@ export const GoogleReviewsSection: React.FC = () => {
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#8BC53D]" />
                       </div>
                       <span className="text-[10px] text-[#E2F0CC]/50 font-mono">
-                        {rev.relativeTime} • Verified Order
+                        {rev.relativeTime} • Demo Order
                       </span>
                     </div>
                   </div>
@@ -98,7 +83,7 @@ export const GoogleReviewsSection: React.FC = () => {
               <div className="mt-4 pt-3 border-t border-[#8BC53D]/10 flex items-center justify-between text-[10px] text-[#E2F0CC]/50">
                 <span className="flex items-center gap-1">
                   <MessageSquare className="w-3 h-3 text-[#8BC53D]" />
-                  Google Verified Review
+                  Sample Review
                 </span>
                 <span className="text-[#8BC53D] font-bold">★ Recommended</span>
               </div>

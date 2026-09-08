@@ -132,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand Logo & Name */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-2xl bg-[#8BC53D] flex items-center justify-center font-black text-[#011207] text-lg shadow-[0_0_15px_rgba(139,197,61,0.25)] flex-shrink-0 tracking-tighter">
-            DR
+            SW
           </div>
           <div>
             <a href="#" className="block">

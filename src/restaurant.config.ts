@@ -66,7 +66,7 @@ export interface SignatureDeal {
 }
 
 export const RESTAURANT_CONFIG: RestaurantConfig = {
-  name: "[Demo Restaurant Name]",
+  name: "Smash & Woodfire",
   phone: "923347383967", // Target: +92 334 7383967 (wa.me target: 923347383967)
   displayPhone: "+92 334 7383967",
   googleMapsUrl: "https://maps.google.com",
